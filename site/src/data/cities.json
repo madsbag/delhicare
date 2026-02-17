@@ -1,0 +1,126 @@
+{
+  "gurgaon": {
+    "display_name": "Gurgaon",
+    "slug": "gurgaon",
+    "description": "Millennium City with world-class healthcare infrastructure and modern care facilities.",
+    "seo_title": "Best Care Facilities in Gurgaon - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Gurgaon. Compare ratings and services.",
+    "count": 29,
+    "category_counts": {
+      "Home Health Care": 7,
+      "Elder Care": 8,
+      "Post-Hospital Care": 9,
+      "Nursing Homes": 5
+    },
+    "top_rated_slugs": [
+      "homely-hands-healthcare-gurgaon",
+      "kd-professional-nursing-home-service-gurgaon-gurgaon",
+      "vatavriksh-parent-care-senior-care-centre-assisted-living-dementia-care-rehabilitation-luxury-senior-living-gurgaon",
+      "situhomecareservice-gurgaon",
+      "snu-enterprises-gurgaon"
+    ],
+    "avg_rating": 4.76
+  },
+  "delhi": {
+    "display_name": "Delhi",
+    "slug": "delhi",
+    "description": "India's capital territory with the highest concentration of healthcare facilities in NCR.",
+    "seo_title": "Best Care Facilities in Delhi - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Delhi. Compare ratings and services.",
+    "count": 104,
+    "category_counts": {
+      "Home Health Care": 20,
+      "Post-Hospital Care": 34,
+      "Nursing Homes": 35,
+      "Elder Care": 15
+    },
+    "top_rated_slugs": [
+      "carevive-home-health-care-pvt-ltd-male-attendant-service-home-injection-home-attendant-service-home-enema-caretakers-delhi",
+      "carevive-home-health-care-nurse-at-home-injection-at-home-attendant-caregivers-delhi",
+      "healing-about-you-a-child-development-center-delhi",
+      "royal-life-foundation-delhi",
+      "sainger-health-care-service-pvtltd-delhi"
+    ],
+    "avg_rating": 4.61
+  },
+  "greater-noida": {
+    "display_name": "Greater Noida",
+    "slug": "greater-noida",
+    "description": "Emerging residential and healthcare hub in the NCR.",
+    "seo_title": "Best Care Facilities in Greater Noida",
+    "seo_description": "Find care facilities in Greater Noida including nursing homes, elder care, and rehabilitation.",
+    "count": 7,
+    "category_counts": {
+      "Home Health Care": 1,
+      "Elder Care": 1,
+      "Post-Hospital Care": 3,
+      "Nursing Homes": 2
+    },
+    "top_rated_slugs": [
+      "home-nursing-care-oxygen-concentrator-on-rent-in-greater-noida-bipap-machine-on-rent-hospital-bed-on-rant-greater-noida",
+      "elder-care-dream-house-greater-noida",
+      "wecaress-occupational-therapy-speech-therapy-child-adhd-counselling-noida-greater-noida",
+      "family-healthcare-hospital-and-nursing-home-greater-noida",
+      "mission-walk-greater-noida"
+    ],
+    "avg_rating": 4.74
+  },
+  "noida": {
+    "display_name": "Noida",
+    "slug": "noida",
+    "description": "Growing hub of quality healthcare services in the NCR region.",
+    "seo_title": "Best Care Facilities in Noida - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Noida.",
+    "count": 14,
+    "category_counts": {
+      "Elder Care": 4,
+      "Post-Hospital Care": 8,
+      "Nursing Homes": 1,
+      "Home Health Care": 1
+    },
+    "top_rated_slugs": [
+      "agewell-havenold-age-home-in-noidasenior-citizen-care-noida",
+      "subhashan-foundation-noida",
+      "sukoon-foundation-rehabilitation-centre-noida",
+      "life-care-foundation-noida",
+      "savita-nursing-home-helth-care-noida"
+    ],
+    "avg_rating": 4.75
+  },
+  "ghaziabad": {
+    "display_name": "Sirohi",
+    "slug": "ghaziabad",
+    "description": "Care facilities in Sirohi.",
+    "seo_title": "Best Care Facilities in Sirohi",
+    "seo_description": "Find care facilities in Sirohi.",
+    "count": 1,
+    "category_counts": {
+      "Post-Hospital Care": 1
+    },
+    "top_rated_slugs": [
+      "aroha-rehabilitation-centre-in-delhi-best-luxury-rehabilitation-centre-sirohi"
+    ],
+    "avg_rating": 3.9
+  },
+  "faridabad": {
+    "display_name": "Faridabad",
+    "slug": "faridabad",
+    "description": "Major Haryana city with growing healthcare and care facility network.",
+    "seo_title": "Best Care Facilities in Faridabad - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, and post-hospital care in Faridabad.",
+    "count": 8,
+    "category_counts": {
+      "Elder Care": 3,
+      "Home Health Care": 4,
+      "Nursing Homes": 1
+    },
+    "top_rated_slugs": [
+      "nirogyam-csp-elder-care-foundation-faridabad",
+      "ncr-home-care-service-faridabad",
+      "the-golden-estate-assisted-living-in-delhi-ncr-faridabad",
+      "amerihealth-home-health-faridabad",
+      "anadi-godham-faridabad"
+    ],
+    "avg_rating": 4.55
+  }
+}

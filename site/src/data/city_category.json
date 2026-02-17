@@ -1,0 +1,484 @@
+{
+  "gurgaon/home-health-care": {
+    "city": "Gurgaon",
+    "city_slug": "gurgaon",
+    "category": "Home Health Care",
+    "category_slug": "home-health-care",
+    "slug": "gurgaon/home-health-care",
+    "seo_title": "Best Home Health Care in Gurgaon - Ratings & Services",
+    "seo_description": "Find top-rated home health care in Gurgaon. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "homely-hands-healthcare-gurgaon",
+      "kd-professional-nursing-home-service-gurgaon-gurgaon",
+      "situhomecareservice-gurgaon",
+      "snu-enterprises-gurgaon",
+      "at-home-care-palam-vihar-extension-gurgaon",
+      "at-home-care-gurgaon",
+      "blessy-nursing-healthcare-360gurugram-gurgaon"
+    ],
+    "count": 7
+  },
+  "delhi/home-health-care": {
+    "city": "Delhi",
+    "city_slug": "delhi",
+    "category": "Home Health Care",
+    "category_slug": "home-health-care",
+    "slug": "delhi/home-health-care",
+    "seo_title": "Best Home Health Care in Delhi - Ratings & Services",
+    "seo_description": "Find top-rated home health care in Delhi. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "carevive-home-health-care-pvt-ltd-male-attendant-service-home-injection-home-attendant-service-home-enema-caretakers-delhi",
+      "carevive-home-health-care-nurse-at-home-injection-at-home-attendant-caregivers-delhi",
+      "sainger-health-care-service-pvtltd-delhi",
+      "home-health-care-delhi",
+      "public-health-care-clinicdiagnostic-centre-with-home-visit-delhi",
+      "cordial-care-health-services-delhi",
+      "velocity-fitness-clinichomecare-delhi",
+      "krishna-nursing-home-care-service-new-delhi-delhi",
+      "future-scale-healthcare-pvt-ltd-delhi",
+      "blessy-nursing-healthcare-360ho-delhi",
+      "saiman-healthcare-icu-at-home-in-delhi-critical-care-at-home-in-delhi-nursing-home-service-in-delhi-delhi",
+      "quality-nursing-services-pvt-ltd-nursing-bureau-in-delhi-ncr-patient-caretaker-at-home-medical-eqiupment-on-rent-delhi",
+      "kalka-nursing-bureau-care-health-nursing-services-nursing-bureau-in-delhi-24hrs-patient-caretaker-at-home-in-delhi-delhi",
+      "healthify-india-home-care-services-in-delhi-vasant-kunj-saket-hauz-khas-malviya-nagar-dwarka-delhi",
+      "radha-nursing-home-care-delhi",
+      "hariom-home-health-care-services-delhi",
+      "tomar-criticare-opc-pvt-ltd-nursing-patient-care-services-home-icu-setup-cardiology-consultant-delhi",
+      "perfect-home-health-care-delhi",
+      "family-health-care-home-nursing-services-delhi",
+      "injection-at-home-all-is-well-medical-centre-delhi"
+    ],
+    "count": 20
+  },
+  "gurgaon/elder-care": {
+    "city": "Gurgaon",
+    "city_slug": "gurgaon",
+    "category": "Elder Care",
+    "category_slug": "elder-care",
+    "slug": "gurgaon/elder-care",
+    "seo_title": "Best Elder Care in Gurgaon - Ratings & Services",
+    "seo_description": "Find top-rated elder care in Gurgaon. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "vatavriksh-parent-care-senior-care-centre-assisted-living-dementia-care-rehabilitation-luxury-senior-living-gurgaon",
+      "nema-eldercare-assisted-living-dementia-care-elder-care-centre-memory-care-home-luxury-old-age-home-in-gurgaon-gurgaon",
+      "samarth-clinic-for-healthy-ageing-elderly-care-service-in-gurgaon-arthritis-treatment-osteoporosis-treatment-in-gurgaon-gurgaon",
+      "antara-care-homes-sec-24-gurgaon-gurgaon",
+      "epoch-elder-care-gustav-gurgaon",
+      "antara-care-homes-dlf-phase-2-gurgaon-gurgaon",
+      "epoch-elder-care-vermeer-gurgaon",
+      "kriti-elder-care-gurgaon"
+    ],
+    "count": 8
+  },
+  "delhi/post-hospital-care": {
+    "city": "Delhi",
+    "city_slug": "delhi",
+    "category": "Post-Hospital Care",
+    "category_slug": "post-hospital-care",
+    "slug": "delhi/post-hospital-care",
+    "seo_title": "Best Post-Hospital Care in Delhi - Ratings & Services",
+    "seo_description": "Find top-rated post-hospital care in Delhi. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "healing-about-you-a-child-development-center-delhi",
+      "royal-life-foundation-delhi",
+      "neuroaid-shakti-delhi",
+      "antarkranti-prisoner-reformation-rehabilitation-program-delhi",
+      "viventia-rehabilitation-foundation-delhi",
+      "pavitra-divya-jyoti-ashram-delhi",
+      "handicapped-childrens-rehabilitation-association-hcra-delhi",
+      "ansh-foundation-delhi",
+      "nmj-clinic-delhi",
+      "kusum-spine-and-neuro-rehabilitation-delhi",
+      "jeevan-dhara-rehabilitation-center-delhi",
+      "hope-rehab-and-wellness-delhi",
+      "genesis-neurogen-rehabilitation-centre-speech-therapy-clinic-in-east-delhi-occupational-therapy-centre-in-east-delhi-delhi",
+      "genesis-neurogen-rehabilitation-centrespeech-therapy-clinicoccupational-therapy-clinicautism-therapy-centre-in-east-delhi-delhi",
+      "parmarth-foundation-delhi",
+      "sukoon-recovery-centre-new-delhi-rehabilitation-center-delhi",
+      "inclusive-neuro-development-speech-therapist-clinicoccupational-therapist-centre-in-shahdara-east-delhi-delhi",
+      "national-trust-for-the-handicapped-delhi",
+      "athena-behavioral-health-luxus-best-luxury-rehab-center-mental-hospital-in-delhi-delhi",
+      "roar-wellness-rehabilitation-center-delhi",
+      "nai-chhavi-foundation-delhi",
+      "kiwanis-club-of-new-delhi-delhi",
+      "shantiratan-foundation-delhi",
+      "sanctum-wellness-and-healing-best-luxury-rehabilitation-centre-in-india-delhi",
+      "anatta-rehabilitation-centre-delhi-delhi",
+      "rapp-genesis-neurogen-charitable-trust-rehab-charitable-trust-delhi",
+      "hcah-stroke-rehabilitation-center-delhi-paralysis-and-neuro-care-paralysis-rehab-recovery-center-delhi",
+      "saksham-rehabilitation-research-centre-delhi",
+      "sampark-foundation-delhi",
+      "rehabilitation-council-of-india-delhi",
+      "drishya-rehabilitation-centre-delhi",
+      "equiprehab-delhi",
+      "adhd-rehab-centre-delhi",
+      "autism-adhd-delayed-speech-downsydrome-brain-stroke-paralyzed-delhi"
+    ],
+    "count": 34
+  },
+  "greater-noida/home-health-care": {
+    "city": "Greater Noida",
+    "city_slug": "greater-noida",
+    "category": "Home Health Care",
+    "category_slug": "home-health-care",
+    "slug": "greater-noida/home-health-care",
+    "seo_title": "Best Home Health Care in Greater Noida - Ratings & Services",
+    "seo_description": "Find top-rated home health care in Greater Noida. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "home-nursing-care-oxygen-concentrator-on-rent-in-greater-noida-bipap-machine-on-rent-hospital-bed-on-rant-greater-noida"
+    ],
+    "count": 1
+  },
+  "noida/elder-care": {
+    "city": "Noida",
+    "city_slug": "noida",
+    "category": "Elder Care",
+    "category_slug": "elder-care",
+    "slug": "noida/elder-care",
+    "seo_title": "Best Elder Care in Noida - Ratings & Services",
+    "seo_description": "Find top-rated elder care in Noida. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "agewell-havenold-age-home-in-noidasenior-citizen-care-noida",
+      "manop-foundation-noida",
+      "rudransh-foundation-noida",
+      "jagruti-dementia-care-assisted-care-noida-noida"
+    ],
+    "count": 4
+  },
+  "noida/post-hospital-care": {
+    "city": "Noida",
+    "city_slug": "noida",
+    "category": "Post-Hospital Care",
+    "category_slug": "post-hospital-care",
+    "slug": "noida/post-hospital-care",
+    "seo_title": "Best Post-Hospital Care in Noida - Ratings & Services",
+    "seo_description": "Find top-rated post-hospital care in Noida. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "subhashan-foundation-noida",
+      "sukoon-foundation-rehabilitation-centre-noida",
+      "life-care-foundation-noida",
+      "lakshya-foundation-noida",
+      "neurotrack-advance-neuro-rehabilitation-centre-noida",
+      "indian-head-injury-foundation-noida",
+      "jagruti-rehabilitation-centre-in-noida-noida",
+      "anant-foundation-noida"
+    ],
+    "count": 8
+  },
+  "ghaziabad/home-health-care": {
+    "city": "Ghaziabad",
+    "city_slug": "ghaziabad",
+    "category": "Home Health Care",
+    "category_slug": "home-health-care",
+    "slug": "ghaziabad/home-health-care",
+    "seo_title": "Best Home Health Care in Ghaziabad - Ratings & Services",
+    "seo_description": "Find top-rated home health care in Ghaziabad. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "pratyaksh-multispeciality-clinic-rehabilitation-centre-home-care-services-ghaziabad",
+      "home-visits-for-special-ones-ghaziabad"
+    ],
+    "count": 2
+  },
+  "delhi/nursing-homes": {
+    "city": "Delhi",
+    "city_slug": "delhi",
+    "category": "Nursing Homes",
+    "category_slug": "nursing-homes",
+    "slug": "delhi/nursing-homes",
+    "seo_title": "Best Nursing Homes in Delhi - Ratings & Services",
+    "seo_description": "Find top-rated nursing homes in Delhi. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "care-spot-nursing-home-care-pvt-ltd-delhi",
+      "shri-krishna-nursing-home-care-pvt-ltd-delhi",
+      "deepak-nursing-home-care-delhi",
+      "sehgal-nursing-home-normal-delivery-hospital-in-delhi-best-maternity-centre-pregnancy-care-delhi",
+      "dr-sanyams-nursing-home-delhi",
+      "fresenius-medical-care-dialysis-center-jeewan-nursing-home-hospital-delhi",
+      "national-health-nursing-home-care-delhi",
+      "hema-nursing-home-care-private-limited-delhi",
+      "digestive-disease-clinic-delhi",
+      "lifeline-nursing-home-delhi",
+      "cnc-nursing-home-delhi",
+      "kailash-nursing-homeeye-careivf-delhi",
+      "porvoo-transition-care-delhi",
+      "d-r-maternity-nursing-home-delhi",
+      "omcharitable-health-care-center-delhi",
+      "mittal-nursing-home-delhi",
+      "mehak-nursing-home-diagnostics-delhi",
+      "uk-nursing-home-a-multi-speciality-hospital-stone-centre-110018-delhi",
+      "shanti-nursing-home-best-laparoscopy-maternity-ortho-stone-centre-in-east-delhi-delhi",
+      "best-hospital-in-vivek-vihar-tandon-nursing-home-delhi",
+      "vijay-nursing-home-delhi",
+      "gautam-nursing-home-delhi",
+      "delhi-hospital-and-temple-nursing-home-delhi",
+      "jawa-nursing-home-delhi",
+      "handa-nursing-home-best-urology-hospital-in-delhi-best-urologist-gallbladder-surgeon-hernia-surgeon-in-delhi-delhi",
+      "jeewan-hospital-and-nursing-home-gate-no-2-delhi",
+      "sai-nursing-home-delhi",
+      "veer-nursing-home-delhi",
+      "amit-nursing-home-delhi",
+      "jeevandayani-ivf-centre-gynecologist-in-najafgarh-ivf-fertility-centre-in-najafgarh-nursing-home-in-najafgarh-delhi",
+      "kesar-nursing-home-delhi",
+      "healthassure-kesar-nursing-home-diagnostic-centre-delhi-imaging-and-diagnostics-blood-tests-ultrasound-delhi",
+      "healthassure-kartik-nursing-home-diagnostic-centre-delhi-imaging-and-diagnostics-blood-tests-ultrasound-delhi",
+      "care-spot-nursing-home-care-pvt-ltd-delhi-1",
+      "dr-sarwan-clinic-gyne-consultation-pediatric-consultation-ortho-consultation-delivery-delhi"
+    ],
+    "count": 35
+  },
+  "ghaziabad/post-hospital-care": {
+    "city": "Ghaziabad",
+    "city_slug": "ghaziabad",
+    "category": "Post-Hospital Care",
+    "category_slug": "post-hospital-care",
+    "slug": "ghaziabad/post-hospital-care",
+    "seo_title": "Best Post-Hospital Care in Ghaziabad - Ratings & Services",
+    "seo_description": "Find top-rated post-hospital care in Ghaziabad. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "beyond-therapy-ghaziabad",
+      "rehab-center-ghaziabad-ghaziabad",
+      "parivartan-neuro-rehabilitation-clinic-ghaziabad",
+      "ikuji-child-development-centre-ghaziabad",
+      "reborn-foundation-ghaziabad",
+      "utkarsh-rehabilitation-ghaziabad-ghaziabad",
+      "pure-cure-foundation-ghaziabad",
+      "aumeesh-tech-pvt-ltd-ghaziabad",
+      "jiwan-sangharsh-charitable-trust-ghaziabad",
+      "satyasarg-foundation-ghaziabad"
+    ],
+    "count": 10
+  },
+  "delhi/elder-care": {
+    "city": "Delhi",
+    "city_slug": "delhi",
+    "category": "Elder Care",
+    "category_slug": "elder-care",
+    "slug": "delhi/elder-care",
+    "seo_title": "Best Elder Care in Delhi - Ratings & Services",
+    "seo_description": "Find top-rated elder care in Delhi. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "aanandam-a-free-old-age-home-by-humanify-foundation-delhi",
+      "silver-lining-old-age-home-delhi",
+      "human-peace-foundation-old-age-home-delhi",
+      "sheows-delhi",
+      "aashiyana-for-senior-citizen-delhi",
+      "sarthak-prayas-second-inning-home-dwarka-delhi",
+      "guru-vishram-vridh-ashram-delhi",
+      "apna-ghar-ashram-budhpur-delhi-delhi",
+      "shanti-sewashram-delhi",
+      "dharamshila-rahat-geriatric-care-department-delhi",
+      "elderly-care-old-age-home-in-south-delhi-delhi",
+      "shashiraj-foundation-old-age-home-rehabillation-centre-special-children-day-care-delhi",
+      "old-age-home-delhi-delhi",
+      "bses-seniors-abode-free-old-age-home-delhi",
+      "second-life-old-age-home-delhi"
+    ],
+    "count": 15
+  },
+  "gurgaon/post-hospital-care": {
+    "city": "Gurgaon",
+    "city_slug": "gurgaon",
+    "category": "Post-Hospital Care",
+    "category_slug": "post-hospital-care",
+    "slug": "gurgaon/post-hospital-care",
+    "seo_title": "Best Post-Hospital Care in Gurgaon - Ratings & Services",
+    "seo_description": "Find top-rated post-hospital care in Gurgaon. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "medharbour-stroke-rehabilitation-recovery-center-in-gurugram-gurgaon",
+      "sethi-neurology-and-rehabilitation-centre-gurgaon",
+      "mission-walk-gurgaon",
+      "tulasi-healthcare-old-age-problem-treatment-dementia-care-home-alzheimer-assisted-care-geriatric-clinic-gurgaon",
+      "serensa-health-gurgaon",
+      "hcah-neuro-stroke-rehabilitation-center-in-gurgaon-haryana-gurgaon",
+      "umeed-for-animals-foundation-gurgaon-gurgaon",
+      "dr-arpita-sephali-best-rehabilitation-doctor-near-me-14-years-exp-gurugram-gurgaon",
+      "post-surgical-rehabilitation-in-gurugram-gurgaon"
+    ],
+    "count": 9
+  },
+  "noida/nursing-homes": {
+    "city": "Noida",
+    "city_slug": "noida",
+    "category": "Nursing Homes",
+    "category_slug": "nursing-homes",
+    "slug": "noida/nursing-homes",
+    "seo_title": "Best Nursing Homes in Noida - Ratings & Services",
+    "seo_description": "Find top-rated nursing homes in Noida. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "savita-nursing-home-helth-care-noida"
+    ],
+    "count": 1
+  },
+  "greater-noida/elder-care": {
+    "city": "Greater Noida",
+    "city_slug": "greater-noida",
+    "category": "Elder Care",
+    "category_slug": "elder-care",
+    "slug": "greater-noida/elder-care",
+    "seo_title": "Best Elder Care in Greater Noida - Ratings & Services",
+    "seo_description": "Find top-rated elder care in Greater Noida. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "elder-care-dream-house-greater-noida"
+    ],
+    "count": 1
+  },
+  "faridabad/elder-care": {
+    "city": "Faridabad",
+    "city_slug": "faridabad",
+    "category": "Elder Care",
+    "category_slug": "elder-care",
+    "slug": "faridabad/elder-care",
+    "seo_title": "Best Elder Care in Faridabad - Ratings & Services",
+    "seo_description": "Find top-rated elder care in Faridabad. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "nirogyam-csp-elder-care-foundation-faridabad",
+      "the-golden-estate-assisted-living-in-delhi-ncr-faridabad",
+      "anadi-godham-faridabad"
+    ],
+    "count": 3
+  },
+  "gurgaon/nursing-homes": {
+    "city": "Gurgaon",
+    "city_slug": "gurgaon",
+    "category": "Nursing Homes",
+    "category_slug": "nursing-homes",
+    "slug": "gurgaon/nursing-homes",
+    "seo_title": "Best Nursing Homes in Gurgaon - Ratings & Services",
+    "seo_description": "Find top-rated nursing homes in Gurgaon. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "aashirwad-nursing-home-best-maternity-and-pregnancy-centre-in-gurgaon-normal-delivery-gynecologist-in-gurgaon-gurgaon",
+      "mks-nursing-home-care-pvt-ltd-gurgaon",
+      "vaishnavi-nursing-home-maternity-normal-delivery-pregnancy-ivf-infertility-gynaecologist-child-clinic-vaccination-gurgaon",
+      "healthwave-nursing-home-dr-bir-singh-yadav-gurgaon",
+      "geeta-nursing-home-gurgaon"
+    ],
+    "count": 5
+  },
+  "greater-noida/post-hospital-care": {
+    "city": "Greater Noida",
+    "city_slug": "greater-noida",
+    "category": "Post-Hospital Care",
+    "category_slug": "post-hospital-care",
+    "slug": "greater-noida/post-hospital-care",
+    "seo_title": "Best Post-Hospital Care in Greater Noida - Ratings & Services",
+    "seo_description": "Find top-rated post-hospital care in Greater Noida. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "wecaress-occupational-therapy-speech-therapy-child-adhd-counselling-noida-greater-noida",
+      "mission-walk-greater-noida",
+      "vishwas-rehabilitation-centre-greater-noida"
+    ],
+    "count": 3
+  },
+  "faridabad/home-health-care": {
+    "city": "Faridabad",
+    "city_slug": "faridabad",
+    "category": "Home Health Care",
+    "category_slug": "home-health-care",
+    "slug": "faridabad/home-health-care",
+    "seo_title": "Best Home Health Care in Faridabad - Ratings & Services",
+    "seo_description": "Find top-rated home health care in Faridabad. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "ncr-home-care-service-faridabad",
+      "amerihealth-home-health-faridabad",
+      "housepital-home-health-care-faridabad",
+      "ayepee-nursing-india-opc-pvt-ltd-faridabad"
+    ],
+    "count": 4
+  },
+  "greater-noida/nursing-homes": {
+    "city": "Greater Noida",
+    "city_slug": "greater-noida",
+    "category": "Nursing Homes",
+    "category_slug": "nursing-homes",
+    "slug": "greater-noida/nursing-homes",
+    "seo_title": "Best Nursing Homes in Greater Noida - Ratings & Services",
+    "seo_description": "Find top-rated nursing homes in Greater Noida. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "family-healthcare-hospital-and-nursing-home-greater-noida",
+      "prakash-institute-piprams-greater-noida"
+    ],
+    "count": 2
+  },
+  "noida/home-health-care": {
+    "city": "Noida",
+    "city_slug": "noida",
+    "category": "Home Health Care",
+    "category_slug": "home-health-care",
+    "slug": "noida/home-health-care",
+    "seo_title": "Best Home Health Care in Noida - Ratings & Services",
+    "seo_description": "Find top-rated home health care in Noida. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "home-nursing-services-medical-equipment-on-rent-or-sale-oxygen-concentrator-on-rent-hospital-bed-on-rent-noida"
+    ],
+    "count": 1
+  },
+  "ghaziabad/nursing-homes": {
+    "city": "Ghaziabad",
+    "city_slug": "ghaziabad",
+    "category": "Nursing Homes",
+    "category_slug": "nursing-homes",
+    "slug": "ghaziabad/nursing-homes",
+    "seo_title": "Best Nursing Homes in Ghaziabad - Ratings & Services",
+    "seo_description": "Find top-rated nursing homes in Ghaziabad. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "divya-nursing-home-gastro-and-liver-care-center-pain-management-centre-ghaziabad",
+      "khatri-nursing-home-ghaziabad",
+      "anand-nursing-home-ghaziabad",
+      "vardhman-nursing-home-ghaziabad",
+      "healthassure-poddar-nursing-home-diagnostic-centre-ghaziabad-imaging-and-diagnostics-blood-tests-ultrasound-ghaziabad"
+    ],
+    "count": 5
+  },
+  "bahadurgarh/nursing-homes": {
+    "city": "Bahadurgarh",
+    "city_slug": "bahadurgarh",
+    "category": "Nursing Homes",
+    "category_slug": "nursing-homes",
+    "slug": "bahadurgarh/nursing-homes",
+    "seo_title": "Best Nursing Homes in Bahadurgarh - Ratings & Services",
+    "seo_description": "Find top-rated nursing homes in Bahadurgarh. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "delhi-hospital-and-nursing-home-bahadurgarh-haryana-bahadurgarh"
+    ],
+    "count": 1
+  },
+  "hapur/nursing-homes": {
+    "city": "Hapur",
+    "city_slug": "hapur",
+    "category": "Nursing Homes",
+    "category_slug": "nursing-homes",
+    "slug": "hapur/nursing-homes",
+    "seo_title": "Best Nursing Homes in Hapur - Ratings & Services",
+    "seo_description": "Find top-rated nursing homes in Hapur. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "raj-nursing-home-hapur-hapur"
+    ],
+    "count": 1
+  },
+  "faridabad/nursing-homes": {
+    "city": "Faridabad",
+    "city_slug": "faridabad",
+    "category": "Nursing Homes",
+    "category_slug": "nursing-homes",
+    "slug": "faridabad/nursing-homes",
+    "seo_title": "Best Nursing Homes in Faridabad - Ratings & Services",
+    "seo_description": "Find top-rated nursing homes in Faridabad. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "gupta-nursing-home-faridabad"
+    ],
+    "count": 1
+  },
+  "sirohi/post-hospital-care": {
+    "city": "Sirohi",
+    "city_slug": "sirohi",
+    "category": "Post-Hospital Care",
+    "category_slug": "post-hospital-care",
+    "slug": "sirohi/post-hospital-care",
+    "seo_title": "Best Post-Hospital Care in Sirohi - Ratings & Services",
+    "seo_description": "Find top-rated post-hospital care in Sirohi. Compare facilities, compare services, and get contact information.",
+    "business_slugs": [
+      "aroha-rehabilitation-centre-in-delhi-best-luxury-rehabilitation-centre-sirohi"
+    ],
+    "count": 1
+  }
+}

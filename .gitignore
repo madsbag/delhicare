@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Pipeline data caches (large files)
+pipeline/data/deep_crawl_cache.json
+pipeline/data/llm_extract_cache.json
+
+# OS
+.DS_Store
+
+# Node
+node_modules/
