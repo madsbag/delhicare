@@ -2,19 +2,19 @@ import { Metadata } from "next";
 import { Heart, Shield, Star, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About DelhiCare",
+  title: "About Karo Care",
   description:
-    "DelhiCare is Delhi NCR's trusted directory for finding nursing homes, elder care, post-hospital care, and home health care services.",
+    "Karo Care is Delhi NCR's trusted directory for finding nursing homes, elder care, post-hospital care, and home health care services.",
 };
 
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-3xl">
-      <h1 className="text-3xl font-bold text-gray-900">About DelhiCare</h1>
+      <h1 className="text-3xl font-bold text-gray-900">About Karo Care</h1>
 
       <div className="mt-8 prose prose-gray max-w-none">
         <p className="text-lg text-gray-600 leading-relaxed">
-          DelhiCare is Delhi NCR&apos;s most comprehensive directory for care
+          Karo Care is Delhi NCR&apos;s most comprehensive directory for care
           facilities. We help families find the right nursing homes, elder care
           facilities, post-hospital care, and home health care services
           across Delhi, Gurgaon, Noida, Ghaziabad, Faridabad, and Greater
@@ -28,7 +28,7 @@ export default function AboutPage() {
           Finding quality care for a loved one is one of the most important
           decisions a family can make. We believe everyone deserves access to
           transparent, reliable information to make that decision with
-          confidence. DelhiCare exists to bridge the information gap in the
+          confidence. Karo Care exists to bridge the information gap in the
           care facility sector.
         </p>
 

@@ -41,13 +41,13 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbsProps) {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://delhicare.in",
+      item: "https://karocare.in",
     },
     ...items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 2,
       name: item.label,
-      ...(item.href ? { item: `https://delhicare.in${item.href}` } : {}),
+      ...(item.href ? { item: `https://karocare.in${item.href}` } : {}),
     })),
   ];
 

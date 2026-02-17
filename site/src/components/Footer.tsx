@@ -11,7 +11,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Heart className="h-6 w-6 text-blue-600" fill="currentColor" />
               <span className="text-lg font-bold text-gray-900">
-                Delhi<span className="text-blue-600">Care</span>
+                Karo<span className="text-blue-600">Care</span>
               </span>
             </Link>
             <p className="text-sm text-gray-500">
@@ -96,7 +96,7 @@ export function Footer() {
                   href="/about"
                   className="text-sm text-gray-500 hover:text-blue-600"
                 >
-                  About DelhiCare
+                  About Karo Care
                 </Link>
               </li>
               <li>
@@ -112,7 +112,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} DelhiCare. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Karo Care. All rights reserved.</p>
         </div>
       </div>
     </footer>

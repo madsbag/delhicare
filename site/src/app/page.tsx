@@ -254,11 +254,11 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Why DelhiCare */}
+      {/* Why Karo Care */}
       <section className="bg-blue-50 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">
-            Why DelhiCare?
+            Why Karo Care?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 max-w-4xl mx-auto">
             <div className="text-center">
@@ -302,13 +302,13 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "DelhiCare",
-            url: "https://delhicare.in",
+            name: "Karo Care",
+            url: "https://karocare.in",
             description:
               "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Delhi NCR.",
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://delhicare.in/directory?q={search_term_string}",
+              target: "https://karocare.in/directory?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           }),

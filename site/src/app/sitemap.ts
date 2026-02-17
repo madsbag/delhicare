@@ -6,7 +6,7 @@ import {
   getAllCityCategoryCombos,
 } from "@/lib/data";
 
-const BASE_URL = "https://delhicare.in";
+const BASE_URL = "https://karocare.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const businesses = getAllBusinesses();

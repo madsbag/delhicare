@@ -8,7 +8,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2">
           <Heart className="h-7 w-7 text-blue-600" fill="currentColor" />
           <span className="text-xl font-bold text-gray-900">
-            Delhi<span className="text-blue-600">Care</span>
+            Karo<span className="text-blue-600">Care</span>
           </span>
         </Link>
 

@@ -11,8 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "DelhiCare - Find Best Care Facilities in Delhi NCR",
-    template: "%s | DelhiCare",
+    default: "Karo Care - Find Best Care Facilities in Delhi NCR",
+    template: "%s | Karo Care",
   },
   description:
     "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Delhi NCR. Compare ratings, services, and facilities.",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "DelhiCare",
+    siteName: "Karo Care",
   },
 };
 

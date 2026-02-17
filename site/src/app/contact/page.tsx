@@ -3,7 +3,7 @@ import { Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Get in touch with DelhiCare for questions, feedback, or to list your care facility.",
+  description: "Get in touch with Karo Care for questions, feedback, or to list your care facility.",
 };
 
 export default function ContactPage() {
@@ -14,7 +14,7 @@ export default function ContactPage() {
       <div className="mt-8 space-y-6">
         <p className="text-gray-600">
           Have questions, feedback, or want to list your care facility on
-          DelhiCare? We&apos;d love to hear from you.
+          Karo Care? We&apos;d love to hear from you.
         </p>
 
         <div className="space-y-4">
@@ -22,7 +22,7 @@ export default function ContactPage() {
             <Mail className="h-5 w-5 text-blue-600" />
             <div>
               <p className="font-medium text-gray-900">Email</p>
-              <p className="text-sm text-gray-500">contact@delhicare.in</p>
+              <p className="text-sm text-gray-500">karocare.in@gmail.com</p>
             </div>
           </div>
           <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
