@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "About Karo Care",
   description:
     "Karo Care is Delhi NCR's trusted directory for finding nursing homes, elder care, post-hospital care, and home health care services.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

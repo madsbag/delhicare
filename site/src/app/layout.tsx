@@ -10,6 +10,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://karocare.in"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Karo Care - Find Best Care Facilities in Delhi NCR",
     template: "%s | Karo Care",
@@ -29,6 +33,20 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Karo Care",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Map - Find Care Facilities Near You",
   description:
     "Interactive map of all care facilities in Delhi NCR. Find nursing homes, elder care, post-hospital care, and home health care near your location.",
+  alternates: {
+    canonical: "/map",
+  },
 };
 
 export default function MapPage() {

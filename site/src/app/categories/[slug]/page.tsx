@@ -29,6 +29,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: catData.seo_title,
     description: catData.seo_description,
+    alternates: {
+      canonical: `/categories/${slug}`,
+    },
   };
 }
 

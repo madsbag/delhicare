@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Find Care Facilities in Delhi NCR - Complete Directory",
   description:
     "Browse 180+ verified nursing homes, elder care, post-hospital care, and home health care in Delhi NCR. Filter by city, category, and ratings.",
+  alternates: {
+    canonical: "/directory",
+  },
 };
 
 export default function DirectoryPage() {

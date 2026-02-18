@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: cityData.seo_title,
     description: cityData.seo_description,
+    alternates: {
+      canonical: `/${city}`,
+    },
   };
 }
 

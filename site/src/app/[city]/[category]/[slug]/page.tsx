@@ -33,6 +33,8 @@ import {
   getRelatedBusinesses,
   getCategoryBySlug,
   getCityBySlug,
+  getAllCities,
+  getAllCategories,
 } from "@/lib/data";
 import type { Business } from "@/lib/types";
 
@@ -62,6 +64,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${business.city_slug}/${business.category_slug}/${business.slug}`,
+    },
     openGraph: {
       title,
       description,
@@ -631,6 +636,79 @@ export default async function ListingPage({ params }: PageProps) {
             </div>
           </div>
         )}
+
+        {/* Internal cross-links for SEO */}
+        <div className="mt-12 pt-8 border-t">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            Explore More Care Facilities
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Browse by city for same category */}
+            <div>
+              <h4 className="text-sm font-medium text-gray-500 mb-2">
+                {categoryData?.display_name || business.category} in Other Cities
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {Object.entries(getAllCities())
+                  .filter(([slug]) => slug !== city)
+                  .map(([slug, c]) => (
+                    <Link
+                      key={slug}
+                      href={`/${slug}/${category}`}
+                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline px-3 py-1.5 bg-blue-50 rounded-full"
+                    >
+                      {c.display_name}
+                    </Link>
+                  ))}
+              </div>
+            </div>
+            {/* Browse other categories in same city */}
+            <div>
+              <h4 className="text-sm font-medium text-gray-500 mb-2">
+                Other Care in {business.city}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {Object.entries(getAllCategories())
+                  .filter(([slug]) => slug !== category)
+                  .map(([slug, cat]) => (
+                    <Link
+                      key={slug}
+                      href={`/${city}/${slug}`}
+                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline px-3 py-1.5 bg-blue-50 rounded-full"
+                    >
+                      {cat.display_name}
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href={`/${city}`}
+              className="text-sm font-medium text-blue-600 hover:underline"
+            >
+              All facilities in {business.city} &rarr;
+            </Link>
+            <Link
+              href={`/categories/${category}`}
+              className="text-sm font-medium text-blue-600 hover:underline"
+            >
+              All {categoryData?.display_name || business.category} in Delhi NCR &rarr;
+            </Link>
+            <Link
+              href="/directory"
+              className="text-sm font-medium text-blue-600 hover:underline"
+            >
+              Browse complete directory &rarr;
+            </Link>
+            <Link
+              href="/map"
+              className="text-sm font-medium text-blue-600 hover:underline"
+            >
+              View on map &rarr;
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );

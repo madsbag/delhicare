@@ -4,6 +4,9 @@ import { Mail, MapPin } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Get in touch with Karo Care for questions, feedback, or to list your care facility.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
