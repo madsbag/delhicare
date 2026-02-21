@@ -3,9 +3,16 @@ __pycache__/
 *.pyc
 .venv/
 
-# Pipeline data caches (large files)
+# Pipeline data caches and large files
 pipeline/data/deep_crawl_cache.json
+pipeline/data/deep_crawl_results.json
 pipeline/data/llm_extract_cache.json
+pipeline/data/places_details_cache.json
+pipeline/data/places_photos_cache.json
+pipeline/data/places_search_cache.json
+pipeline/data/stage2_llm_cache.json
+pipeline/data/stage2_llm_delhi.json
+pipeline/data/stage2_rules_delhi.json
 
 # OS
 .DS_Store

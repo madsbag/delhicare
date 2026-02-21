@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Mail, MapPin, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Get in touch with Karo Care for questions, feedback, or to list your care facility.",
+  description:
+    "Get in touch with Karo Care for questions, feedback, or to list your care facility.",
   alternates: {
     canonical: "/contact",
   },
@@ -21,31 +23,48 @@ export default function ContactPage() {
         </p>
 
         <div className="space-y-4">
-          <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
-            <Mail className="h-5 w-5 text-blue-600" />
+          <div className="flex items-center gap-3 p-4 bg-[#FFF5EE] rounded-lg">
+            <Mail className="h-5 w-5 text-[#E8927C]" />
             <div>
               <p className="font-medium text-gray-900">Email</p>
-              <p className="text-sm text-gray-500">karocare.in@gmail.com</p>
+              <a
+                href="mailto:karocare.in@gmail.com"
+                className="text-sm text-[#E8927C] hover:text-[#D4785F]"
+              >
+                karocare.in@gmail.com
+              </a>
             </div>
           </div>
-          <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
-            <MapPin className="h-5 w-5 text-blue-600" />
+          <div className="flex items-center gap-3 p-4 bg-[#FFF5EE] rounded-lg">
+            <MapPin className="h-5 w-5 text-[#E8927C]" />
             <div>
               <p className="font-medium text-gray-900">Location</p>
-              <p className="text-sm text-gray-500">Delhi NCR, India</p>
+              <p className="text-sm text-gray-500">India</p>
             </div>
           </div>
+          <Link
+            href="/feedback"
+            className="flex items-center gap-3 p-4 bg-[#FFF5EE] rounded-lg hover:bg-[#FFF0F0] transition-colors"
+          >
+            <MessageSquare className="h-5 w-5 text-[#E8927C]" />
+            <div>
+              <p className="font-medium text-gray-900">Share Feedback</p>
+              <p className="text-sm text-gray-500">
+                Report incorrect listings, suggest facilities, or share ideas
+              </p>
+            </div>
+          </Link>
         </div>
 
-        <div className="mt-8 p-6 bg-blue-50 rounded-xl">
+        <div className="mt-8 p-6 bg-[#FFF0F0] rounded-xl">
           <h2 className="font-semibold text-gray-900">
             Are you a care facility?
           </h2>
           <p className="text-sm text-gray-600 mt-2">
-            If you run a nursing home, elder care facility, post-hospital
-            care center, or home health care service in Delhi NCR, we can help you
-            reach more patients and families. Contact us to update or claim
-            your listing.
+            If you run a nursing home, senior care facility, post-hospital
+            care centre, or home health care service anywhere in India, we can
+            help you reach more patients and families. Contact us to update or
+            claim your listing.
           </p>
         </div>
       </div>

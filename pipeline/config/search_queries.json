@@ -1,0 +1,42 @@
+{
+  "_comment": "All search terms per category. Each term is searched across every city.",
+
+  "terms": {
+    "Nursing Homes": [
+      "nursing home",
+      "nursing care facility",
+      "patient care center",
+      "nursing facility",
+      "convalescent home",
+      "step down facility",
+      "long term care facility"
+    ],
+    "Elder Care": [
+      "elder care",
+      "old age home",
+      "senior living",
+      "senior citizen home",
+      "assisted living",
+      "old age care home",
+      "retirement home",
+      "senior care center"
+    ],
+    "Post-Hospital Care": [
+      "rehabilitation center",
+      "post surgical care center",
+      "stroke rehabilitation center",
+      "neuro rehabilitation center",
+      "recovery center"
+    ],
+    "Home Health Care": [
+      "home health care",
+      "home nursing service",
+      "home nursing agency",
+      "home care service",
+      "nursing at home",
+      "ICU at home",
+      "attendant service",
+      "home medical care"
+    ]
+  }
+}

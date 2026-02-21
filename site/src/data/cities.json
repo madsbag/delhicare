@@ -1,69 +1,245 @@
 {
+  "mumbai": {
+    "display_name": "Mumbai",
+    "slug": "mumbai",
+    "description": "India's financial capital with a comprehensive network of healthcare and care facilities.",
+    "seo_title": "Best Care Facilities in Mumbai - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Mumbai.",
+    "count": 497,
+    "category_counts": {
+      "Post-Hospital Care": 14,
+      "Home Health Care": 213,
+      "Elder Care": 166,
+      "Nursing Homes": 104
+    },
+    "top_rated_slugs": [
+      "swasth-sankalp-mumbai",
+      "angels-nurses-bureau-mumbai-branch-mumbai",
+      "sai-senior-citizens-caring-foundation-best-old-age-home-in-borivali-old-age-home",
+      "karmabhumi-caretaker-services-nursing-bureaus-mumbai",
+      "thyrocare-centre-laboratory-services-home-collection-mumbai"
+    ],
+    "avg_rating": 4.51
+  },
+  "chennai": {
+    "display_name": "Chennai",
+    "slug": "chennai",
+    "description": "Major healthcare destination in South India with a wide range of care facilities.",
+    "seo_title": "Best Care Facilities in Chennai - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Chennai.",
+    "count": 489,
+    "category_counts": {
+      "Elder Care": 199,
+      "Home Health Care": 238,
+      "Post-Hospital Care": 11,
+      "Nursing Homes": 41
+    },
+    "top_rated_slugs": [
+      "akshaya-trust-valasaravakkam-chennai",
+      "akshaya-trust-pallikaranai-chennai",
+      "brindavanam-retirement-home-chennai",
+      "akshaya-trust-velappanchavadi-chennai",
+      "akshaya-trust-palavakkam-chennai"
+    ],
+    "avg_rating": 4.64
+  },
+  "bangalore": {
+    "display_name": "Bangalore",
+    "slug": "bangalore",
+    "description": "India's tech hub with world-class healthcare infrastructure and modern care facilities.",
+    "seo_title": "Best Care Facilities in Bangalore - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Bangalore.",
+    "count": 439,
+    "category_counts": {
+      "Elder Care": 153,
+      "Home Health Care": 233,
+      "Post-Hospital Care": 24,
+      "Nursing Homes": 29
+    },
+    "top_rated_slugs": [
+      "lavalavike-old-age-home-and-rehabilitation-centre-bangalore",
+      "avyang-foundation-destitute-old-age-home-bangalore",
+      "samprapti-old-age-home-bangalore",
+      "manipal-hospitals-home-care-services-bangalore-bangalore",
+      "shanti-healthcare-best-home-nursing-services-in-bangalore-bangalore"
+    ],
+    "avg_rating": 4.64
+  },
+  "ahmedabad": {
+    "display_name": "Ahmedabad",
+    "slug": "ahmedabad",
+    "description": "Gujarat's largest city with a growing network of healthcare and care facilities.",
+    "seo_title": "Best Care Facilities in Ahmedabad - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Ahmedabad.",
+    "count": 165,
+    "category_counts": {
+      "Home Health Care": 91,
+      "Post-Hospital Care": 6,
+      "Elder Care": 37,
+      "Nursing Homes": 31
+    },
+    "top_rated_slugs": [
+      "passtela-care-best-nursing-care-at-home-best-home-health-care-ahmedabad",
+      "neurokalp-ahmedabad",
+      "utkanti-home-health-care-pvt-ltd-ahmedabad",
+      "ekta-care-rehabilitation-retirement-homes-old-age-home-care-home-for-bedridden-i",
+      "jainam-home-care-ahmedabad"
+    ],
+    "avg_rating": 4.71
+  },
+  "delhi": {
+    "display_name": "Delhi",
+    "slug": "delhi",
+    "description": "India's capital territory with the highest concentration of healthcare and care facilities.",
+    "seo_title": "Best Care Facilities in Delhi - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Delhi. Compare ratings and services.",
+    "count": 536,
+    "category_counts": {
+      "Elder Care": 77,
+      "Home Health Care": 364,
+      "Nursing Homes": 83,
+      "Post-Hospital Care": 12
+    },
+    "top_rated_slugs": [
+      "kamla-bakshi-elders-home-society-delhi",
+      "hilfe-nursing-delhi",
+      "carevive-home-health-care-pvt-ltd-male-attendant-service-home-injection-home-att",
+      "angel-nursing-healthcare-service-llp-delhi",
+      "home-health-care-nursing-bureau-delhi"
+    ],
+    "avg_rating": 4.65
+  },
   "gurgaon": {
     "display_name": "Gurgaon",
     "slug": "gurgaon",
     "description": "Millennium City with world-class healthcare infrastructure and modern care facilities.",
     "seo_title": "Best Care Facilities in Gurgaon - Directory & Ratings",
     "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Gurgaon. Compare ratings and services.",
-    "count": 29,
+    "count": 162,
     "category_counts": {
-      "Home Health Care": 7,
-      "Elder Care": 8,
-      "Post-Hospital Care": 9,
-      "Nursing Homes": 5
+      "Home Health Care": 115,
+      "Nursing Homes": 14,
+      "Elder Care": 29,
+      "Post-Hospital Care": 4
     },
     "top_rated_slugs": [
       "homely-hands-healthcare-gurgaon",
+      "wellbeing-home-care-best-nursing-agency-gurgaon-gurgaon",
+      "injection-at-home-gurgaon-2",
       "kd-professional-nursing-home-service-gurgaon-gurgaon",
-      "vatavriksh-parent-care-senior-care-centre-assisted-living-dementia-care-rehabilitation-luxury-senior-living-gurgaon",
-      "situhomecareservice-gurgaon",
-      "snu-enterprises-gurgaon"
+      "injection-at-home-wellbeing-gurgaon"
     ],
-    "avg_rating": 4.76
+    "avg_rating": 4.86
   },
-  "delhi": {
-    "display_name": "Delhi",
-    "slug": "delhi",
-    "description": "India's capital territory with the highest concentration of healthcare facilities in NCR.",
-    "seo_title": "Best Care Facilities in Delhi - Directory & Ratings",
-    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Delhi. Compare ratings and services.",
-    "count": 104,
+  "chandigarh": {
+    "display_name": "Chandigarh",
+    "slug": "chandigarh",
+    "description": "Well-planned city with excellent healthcare infrastructure and care services.",
+    "seo_title": "Best Care Facilities in Chandigarh - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Chandigarh.",
+    "count": 112,
     "category_counts": {
-      "Home Health Care": 20,
-      "Post-Hospital Care": 34,
-      "Nursing Homes": 35,
-      "Elder Care": 15
+      "Home Health Care": 84,
+      "Nursing Homes": 14,
+      "Elder Care": 11,
+      "Post-Hospital Care": 3
     },
     "top_rated_slugs": [
-      "carevive-home-health-care-pvt-ltd-male-attendant-service-home-injection-home-attendant-service-home-enema-caretakers-delhi",
-      "carevive-home-health-care-nurse-at-home-injection-at-home-attendant-caregivers-delhi",
-      "healing-about-you-a-child-development-center-delhi",
-      "royal-life-foundation-delhi",
-      "sainger-health-care-service-pvtltd-delhi"
+      "hr-caretaker-best-home-care-service-provider-in-chandigarh-panchkula-mohali-zira",
+      "sunny-home-care-patient-care-services-chandigarh",
+      "raj-medical-and-nursing-care-home-services-chandigarh",
+      "maxathome-nursing-services-at-home-chandigarh-2",
+      "ab-gill-patient-home-health-care-services-panchkula-chandigarh-mohali-zirakpur-c"
     ],
-    "avg_rating": 4.61
+    "avg_rating": 4.67
   },
-  "greater-noida": {
-    "display_name": "Greater Noida",
-    "slug": "greater-noida",
-    "description": "Emerging residential and healthcare hub in the NCR.",
-    "seo_title": "Best Care Facilities in Greater Noida",
-    "seo_description": "Find care facilities in Greater Noida including nursing homes, elder care, and rehabilitation.",
-    "count": 7,
+  "lucknow": {
+    "display_name": "Lucknow",
+    "slug": "lucknow",
+    "description": "Uttar Pradesh's capital with growing healthcare and elder care services.",
+    "seo_title": "Best Care Facilities in Lucknow - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Lucknow.",
+    "count": 140,
     "category_counts": {
-      "Home Health Care": 1,
-      "Elder Care": 1,
-      "Post-Hospital Care": 3,
-      "Nursing Homes": 2
+      "Home Health Care": 93,
+      "Elder Care": 23,
+      "Nursing Homes": 22,
+      "Post-Hospital Care": 2
     },
     "top_rated_slugs": [
-      "home-nursing-care-oxygen-concentrator-on-rent-in-greater-noida-bipap-machine-on-rent-hospital-bed-on-rant-greater-noida",
-      "elder-care-dream-house-greater-noida",
-      "wecaress-occupational-therapy-speech-therapy-child-adhd-counselling-noida-greater-noida",
-      "family-healthcare-hospital-and-nursing-home-greater-noida",
-      "mission-walk-greater-noida"
+      "lucknow-nursing-care-best-home-nursing-best-elderly-care-cancer-care-geriatric-c",
+      "shri-ram-home-nursing-services-lucknow-best-patient-care-in-lucknow-elder-care-c",
+      "shukla-and-patient-care-home-services-lucknow",
+      "palliative-home-care-services-best-home-nursing-services-patient-care-elder-care",
+      "medico-home-healthcare-services-best-home-nursing-best-care-taker-services-luckn"
     ],
-    "avg_rating": 4.74
+    "avg_rating": 4.72
+  },
+  "hyderabad": {
+    "display_name": "Hyderabad",
+    "slug": "hyderabad",
+    "description": "Growing healthcare hub in Telangana with modern care facilities and services.",
+    "seo_title": "Best Care Facilities in Hyderabad - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Hyderabad.",
+    "count": 466,
+    "category_counts": {
+      "Elder Care": 173,
+      "Home Health Care": 226,
+      "Post-Hospital Care": 29,
+      "Nursing Homes": 38
+    },
+    "top_rated_slugs": [
+      "shirdi-sai-niveditha-old-age-home-hyderabad",
+      "prashanthi-old-age-home-hyderabad",
+      "eminence-home-healthcare-home-care-services-patient-care-home-nursing-care-elder",
+      "ayushmaan-old-age-home-hyderabad",
+      "kaveri-home-care-services-hyderabad"
+    ],
+    "avg_rating": 4.57
+  },
+  "jaipur": {
+    "display_name": "Jaipur",
+    "slug": "jaipur",
+    "description": "Rajasthan's capital with expanding healthcare infrastructure and care facilities.",
+    "seo_title": "Best Care Facilities in Jaipur - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Jaipur.",
+    "count": 131,
+    "category_counts": {
+      "Home Health Care": 74,
+      "Nursing Homes": 45,
+      "Elder Care": 11,
+      "Post-Hospital Care": 1
+    },
+    "top_rated_slugs": [
+      "monu-health-care-services-at-jaipur-jaipur",
+      "rogicare-home-health-care-service-in-jaipur-rajasthan-jaipur",
+      "aditya-nursing-homecare-jaipur",
+      "rishika-nursing-home-care-services-jaipur",
+      "saini-home-health-care-services-jaipur-jaipur"
+    ],
+    "avg_rating": 4.73
+  },
+  "kolkata": {
+    "display_name": "Kolkata",
+    "slug": "kolkata",
+    "description": "Eastern India's premier city with established healthcare and elder care infrastructure.",
+    "seo_title": "Best Care Facilities in Kolkata - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Kolkata.",
+    "count": 406,
+    "category_counts": {
+      "Elder Care": 145,
+      "Nursing Homes": 126,
+      "Home Health Care": 128,
+      "Post-Hospital Care": 7
+    },
+    "top_rated_slugs": [
+      "natun-ghar-old-age-home-by-jagorani-ngo-kolkata",
+      "natun-khushi-nursing-home-kolkata",
+      "healthcross-home-health-careelder-caredoctor-home-visit-at-kolkata-kolkata",
+      "kurves-parivaar-senior-kare-private-limited-kolkata",
+      "kolkata-old-age-home-kolkata"
+    ],
+    "avg_rating": 4.36
   },
   "noida": {
     "display_name": "Noida",
@@ -71,36 +247,87 @@
     "description": "Growing hub of quality healthcare services in the NCR region.",
     "seo_title": "Best Care Facilities in Noida - Directory & Ratings",
     "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Noida.",
-    "count": 14,
+    "count": 132,
     "category_counts": {
-      "Elder Care": 4,
-      "Post-Hospital Care": 8,
-      "Nursing Homes": 1,
-      "Home Health Care": 1
+      "Elder Care": 29,
+      "Home Health Care": 81,
+      "Nursing Homes": 20,
+      "Post-Hospital Care": 2
     },
     "top_rated_slugs": [
-      "agewell-havenold-age-home-in-noidasenior-citizen-care-noida",
-      "subhashan-foundation-noida",
-      "sukoon-foundation-rehabilitation-centre-noida",
-      "life-care-foundation-noida",
-      "savita-nursing-home-helth-care-noida"
+      "tapasya-retirement-home-old-age-home-noida",
+      "hilfe-nursing-services-noida",
+      "quality-nursing-services-noida",
+      "elder-comfort-nursing-care-pvt-ltd-noida",
+      "care-home-nursing-services-noida"
     ],
-    "avg_rating": 4.75
+    "avg_rating": 4.84
+  },
+  "pune": {
+    "display_name": "Pune",
+    "slug": "pune",
+    "description": "Maharashtra's second-largest city with excellent healthcare and care facility options.",
+    "seo_title": "Best Care Facilities in Pune - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Pune.",
+    "count": 328,
+    "category_counts": {
+      "Elder Care": 138,
+      "Nursing Homes": 25,
+      "Home Health Care": 151,
+      "Post-Hospital Care": 14
+    },
+    "top_rated_slugs": [
+      "ask-old-age-home-orphanage-pune",
+      "gurukrupa-nursing-home-pune",
+      "home-nursing-service-pune",
+      "gulmohar-care-home-best-care-home-pune-pune",
+      "sonashray-old-age-home-home-for-senior-living-pune"
+    ],
+    "avg_rating": 4.69
   },
   "ghaziabad": {
-    "display_name": "Sirohi",
+    "display_name": "Ghaziabad",
     "slug": "ghaziabad",
-    "description": "Care facilities in Sirohi.",
-    "seo_title": "Best Care Facilities in Sirohi",
-    "seo_description": "Find care facilities in Sirohi.",
-    "count": 1,
+    "description": "Gateway to UP with expanding healthcare infrastructure.",
+    "seo_title": "Best Care Facilities in Ghaziabad - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, and post-hospital care in Ghaziabad.",
+    "count": 96,
     "category_counts": {
-      "Post-Hospital Care": 1
+      "Post-Hospital Care": 1,
+      "Home Health Care": 56,
+      "Nursing Homes": 26,
+      "Elder Care": 13
     },
     "top_rated_slugs": [
-      "aroha-rehabilitation-centre-in-delhi-best-luxury-rehabilitation-centre-sirohi"
+      "unnati-neuro-developmental-rehabilitation-center-ghaziabad",
+      "pinenut-physiotherapy-and-rehab-clinic-dr-arpita-jain-ghaziabad",
+      "nursing-service-vaishali-vasundhra-indrapuram-at-home-fast-service-ghaziabad",
+      "home-medicare4u-tedrag-ghaziabad",
+      "track-homecare-pvt-ltd-ghaziabad"
     ],
-    "avg_rating": 3.9
+    "avg_rating": 4.64
+  },
+  "kochi": {
+    "display_name": "Kochi",
+    "slug": "kochi",
+    "description": "Kerala's commercial capital with renowned healthcare and elder care facilities.",
+    "seo_title": "Best Care Facilities in Kochi - Directory & Ratings",
+    "seo_description": "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Kochi.",
+    "count": 156,
+    "category_counts": {
+      "Elder Care": 46,
+      "Home Health Care": 98,
+      "Post-Hospital Care": 9,
+      "Nursing Homes": 3
+    },
+    "top_rated_slugs": [
+      "signature-agedcare-dimentia-alzheimers-home-kochi",
+      "arike-palliative-home-care-kochi",
+      "true-life-care-nursing-services-ernakulam-kochi",
+      "velora-home-health-care-kochi",
+      "aiswarya-home-nursing-service-ernakulam-kochi"
+    ],
+    "avg_rating": 4.52
   },
   "faridabad": {
     "display_name": "Faridabad",
@@ -108,19 +335,42 @@
     "description": "Major Haryana city with growing healthcare and care facility network.",
     "seo_title": "Best Care Facilities in Faridabad - Directory & Ratings",
     "seo_description": "Find top-rated nursing homes, elder care, and post-hospital care in Faridabad.",
-    "count": 8,
+    "count": 81,
     "category_counts": {
-      "Elder Care": 3,
-      "Home Health Care": 4,
-      "Nursing Homes": 1
+      "Home Health Care": 37,
+      "Elder Care": 14,
+      "Nursing Homes": 29,
+      "Post-Hospital Care": 1
     },
     "top_rated_slugs": [
-      "nirogyam-csp-elder-care-foundation-faridabad",
-      "ncr-home-care-service-faridabad",
-      "the-golden-estate-assisted-living-in-delhi-ncr-faridabad",
-      "amerihealth-home-health-faridabad",
-      "anadi-godham-faridabad"
+      "nupun-home-health-care-services-faridabad",
+      "jeevan-ek-kiran-best-old-age-home-in-faridabad-faridabad",
+      "priyanshi-home-health-care-services-faridabad",
+      "dementia-care-home-faridabad",
+      "elderly-care-service-patient-attendant-service-nurse-at-home-nursing-agency-in-f"
     ],
     "avg_rating": 4.55
+  },
+  "greater-noida": {
+    "display_name": "Greater Noida",
+    "slug": "greater-noida",
+    "description": "Emerging residential and healthcare hub in the NCR.",
+    "seo_title": "Best Care Facilities in Greater Noida",
+    "seo_description": "Find care facilities in Greater Noida including nursing homes, elder care, and rehabilitation.",
+    "count": 46,
+    "category_counts": {
+      "Home Health Care": 30,
+      "Nursing Homes": 7,
+      "Elder Care": 7,
+      "Post-Hospital Care": 2
+    },
+    "top_rated_slugs": [
+      "hilfe-patient-care-services-greater-noida",
+      "home-care-medical-line-greater-noida",
+      "janvee-nursing-home-care-pvt-ltd-greater-noida",
+      "injection-service-at-home-greater-noida",
+      "space-patient-nursing-bureau-greater-noida"
+    ],
+    "avg_rating": 4.81
   }
 }

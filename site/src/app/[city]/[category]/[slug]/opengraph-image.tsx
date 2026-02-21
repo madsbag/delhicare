@@ -22,7 +22,7 @@ export default async function OgImage({
             justifyContent: "center",
             width: "100%",
             height: "100%",
-            backgroundColor: "#1e40af",
+            background: "linear-gradient(135deg, #F7C5B8 0%, #E8927C 100%)",
             color: "white",
             fontSize: 48,
             fontWeight: 700,
@@ -51,14 +51,14 @@ export default async function OgImage({
           fontFamily: "system-ui, sans-serif",
         }}
       >
-        {/* Blue header bar */}
+        {/* Header bar */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             padding: "24px 48px",
-            backgroundColor: "#1e40af",
+            background: "linear-gradient(135deg, #F7C5B8 0%, #E8927C 100%)",
             color: "white",
           }}
         >
@@ -88,7 +88,7 @@ export default async function OgImage({
           <div
             style={{
               fontSize: 20,
-              color: "#2563eb",
+              color: "#E8927C",
               fontWeight: 600,
               marginBottom: "12px",
             }}
@@ -116,14 +116,14 @@ export default async function OgImage({
               color: "#6b7280",
             }}
           >
-            <span>📍 {business.city}, {business.state}</span>
+            <span>{business.city}</span>
             {ratingText && (
               <span style={{ color: "#d97706", fontWeight: 600 }}>
                 {ratingText}
               </span>
             )}
           </div>
-          {business.services && business.services.length > 0 && (
+          {business.specialities && business.specialities.length > 0 && (
             <div
               style={{
                 display: "flex",
@@ -132,19 +132,19 @@ export default async function OgImage({
                 marginTop: "24px",
               }}
             >
-              {business.services.slice(0, 4).map((s) => (
+              {business.specialities.slice(0, 4).map((s) => (
                 <span
-                  key={s.name}
+                  key={s}
                   style={{
                     padding: "6px 16px",
                     borderRadius: "20px",
-                    backgroundColor: "#eff6ff",
-                    color: "#1e40af",
+                    backgroundColor: "#FFF5EE",
+                    color: "#D4785F",
                     fontSize: 16,
                     fontWeight: 500,
                   }}
                 >
-                  {s.name}
+                  {s}
                 </span>
               ))}
             </div>

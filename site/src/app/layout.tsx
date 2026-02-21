@@ -15,19 +15,28 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    default: "Karo Care - Find Best Care Facilities in Delhi NCR",
+    default: "Karo Care - Find Best Supportive Health Care Facilities in India",
     template: "%s | Karo Care",
   },
   description:
-    "Find top-rated nursing homes, elder care, post-hospital care, and home health care in Delhi NCR. Compare ratings, services, and facilities.",
+    "Discover the best supportive health care facilities in India — Senior Care, Post Hospital Care, Nursing Homes, At-Home Care. Compare specialities, ratings, and services across 17 cities.",
   keywords: [
-    "nursing homes delhi",
-    "elder care delhi ncr",
-    "post hospital care delhi",
-    "home health care noida",
-    "old age home gurgaon",
-    "post surgery care delhi",
-    "rehabilitation center delhi",
+    "senior care india",
+    "elder care facilities",
+    "post hospital care",
+    "nursing homes india",
+    "home health care",
+    "at-home care services",
+    "dementia care",
+    "stroke rehabilitation",
+    "palliative care",
+    "post operative care",
+    "geriatric care",
+    "assisted living india",
+    "old age home delhi",
+    "nursing home mumbai",
+    "elder care bangalore",
+    "home care hyderabad",
   ],
   openGraph: {
     type: "website",
@@ -56,7 +65,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
+      <head>
+        <link rel="preconnect" href="https://places.googleapis.com" />
+        <link rel="dns-prefetch" href="https://places.googleapis.com" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>

@@ -1,21 +1,28 @@
 import { Metadata } from "next";
 import { Breadcrumbs, BreadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { FilterableDirectory } from "@/components/FilterBar";
-import { getAllBusinesses, getAllCitySlugs } from "@/lib/data";
+import { getAllBusinesses, getAllCitySlugs, getAllSpecialities, getAllFacilityTypes } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Find Care Facilities in Delhi NCR - Complete Directory",
+  title: "Find Supportive Health Care Facilities in India - Complete Directory",
   description:
-    "Browse 180+ verified nursing homes, elder care, post-hospital care, and home health care in Delhi NCR. Filter by city, category, and ratings.",
+    "Browse senior care, post hospital care, nursing homes, and at-home care across 17 Indian cities. Filter by city, category, and speciality.",
   alternates: {
     canonical: "/directory",
   },
 };
 
-export default function DirectoryPage() {
+export default async function DirectoryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ speciality?: string; city?: string; category?: string }>;
+}) {
+  const params = await searchParams;
   const businesses = getAllBusinesses();
   const allCategories = [...new Set(businesses.map((b) => b.category))];
   const allCities = getAllCitySlugs();
+  const allSpecialities = getAllSpecialities();
+  const allFacilityTypes = getAllFacilityTypes();
 
   const breadcrumbs = [{ label: "Directory" }];
 
@@ -27,12 +34,12 @@ export default function DirectoryPage() {
 
         <div className="mt-6 mb-8">
           <h1 className="text-3xl font-bold text-gray-900">
-            Find Care Facilities in Delhi NCR
+            Find Supportive Health Care Facilities in India
           </h1>
           <p className="mt-2 text-gray-600 max-w-2xl">
-            Browse our complete directory of {businesses.length} verified
-            nursing homes, elder care facilities, post-hospital care, and
-            home health care services across Delhi NCR.
+            Browse our complete directory of {businesses.length} senior care,
+            nursing homes, post hospital care, and at-home care facilities
+            across India.
           </p>
         </div>
 
@@ -40,6 +47,11 @@ export default function DirectoryPage() {
           businesses={businesses}
           allCategories={allCategories}
           allCities={allCities}
+          allSpecialities={allSpecialities}
+          allFacilityTypes={allFacilityTypes}
+          initialSpeciality={params.speciality}
+          initialCity={params.city}
+          initialCategory={params.category}
         />
       </div>
     </>

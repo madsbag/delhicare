@@ -4,7 +4,9 @@ import {
   getAllCitySlugs,
   getAllCategorySlugs,
   getAllCityCategoryCombos,
+  getAllCitySpecialityCombos,
 } from "@/lib/data";
+import { getAllPosts } from "@/lib/blog";
 
 const BASE_URL = "https://karocare.in";
 
@@ -62,11 +64,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // City+Speciality pages
+  const citySpecCombos = getAllCitySpecialityCombos();
+  for (const combo of citySpecCombos) {
+    routes.push({
+      url: `${BASE_URL}/${combo.city_slug}/speciality/${combo.speciality_slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    });
+  }
+
   // Individual listing pages
   for (const biz of businesses) {
     routes.push({
       url: `${BASE_URL}/${biz.city_slug}/${biz.category_slug}/${biz.slug}`,
       lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  // Blog pages
+  const blogPosts = getAllPosts();
+  routes.push({
+    url: `${BASE_URL}/blog`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  });
+  for (const post of blogPosts) {
+    routes.push({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
       changeFrequency: "monthly",
       priority: 0.6,
     });
@@ -85,6 +115,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/map`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/feedback`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.2,
     }
   );
 

@@ -15,7 +15,7 @@ export default async function OgImage() {
           flexDirection: "column",
           width: "100%",
           height: "100%",
-          backgroundColor: "#1e40af",
+          background: "linear-gradient(135deg, #F7C5B8 0%, #F5B0A0 50%, #E8927C 100%)",
           color: "white",
           fontFamily: "system-ui, sans-serif",
           alignItems: "center",
@@ -27,12 +27,12 @@ export default async function OgImage() {
         <div
           style={{
             fontSize: 28,
-            opacity: 0.9,
+            opacity: 0.95,
             marginTop: "16px",
             maxWidth: "700px",
           }}
         >
-          Find the Best Care Facilities in Delhi NCR
+          Discover the Best Supportive Health Care Facilities in India
         </div>
         <div
           style={{

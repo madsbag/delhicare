@@ -78,6 +78,46 @@ export function getAllBusinessSlugs(): string[] {
   return businesses.map((b) => b.slug);
 }
 
+// ─── Speciality queries ─────────────────────────────────────────────────────
+
+let _specialitiesCache: string[] | null = null;
+
+export function getAllSpecialities(): string[] {
+  if (_specialitiesCache) return _specialitiesCache;
+  const set = new Set<string>();
+  for (const b of businesses) {
+    if (b.specialities) {
+      for (const s of b.specialities) {
+        set.add(s);
+      }
+    }
+  }
+  _specialitiesCache = Array.from(set).sort();
+  return _specialitiesCache;
+}
+
+export function getBusinessesBySpeciality(speciality: string): Business[] {
+  return businesses.filter(
+    (b) => b.specialities && b.specialities.includes(speciality)
+  );
+}
+
+// ─── Facility type queries ───────────────────────────────────────────────────
+
+let _facilityTypesCache: string[] | null = null;
+
+export function getAllFacilityTypes(): string[] {
+  if (_facilityTypesCache) return _facilityTypesCache;
+  const set = new Set<string>();
+  for (const b of businesses) {
+    if (b.facility_type && b.facility_type !== "Unknown") {
+      set.add(b.facility_type);
+    }
+  }
+  _facilityTypesCache = Array.from(set).sort();
+  return _facilityTypesCache;
+}
+
 // ─── City queries ────────────────────────────────────────────────────────────
 
 export function getAllCities(): Record<string, CityData> {
@@ -126,6 +166,64 @@ export function getSearchIndex(): SearchEntry[] {
   return searchIndex;
 }
 
+// ─── Speciality + City queries ──────────────────────────────────────────────
+
+export function slugifySpeciality(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/'/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+let _specSlugMapCache: Record<string, string> | null = null;
+
+/** Maps speciality slug → display name */
+export function getSpecialitySlugMap(): Record<string, string> {
+  if (_specSlugMapCache) return _specSlugMapCache;
+  const map: Record<string, string> = {};
+  for (const b of businesses) {
+    if (b.specialities) {
+      for (const s of b.specialities) {
+        map[slugifySpeciality(s)] = s;
+      }
+    }
+  }
+  _specSlugMapCache = map;
+  return map;
+}
+
+/** Get the display name for a speciality slug */
+export function getSpecialityBySlug(slug: string): string | undefined {
+  return getSpecialitySlugMap()[slug];
+}
+
+/** Get all city+speciality combos that have at least 1 facility */
+export function getAllCitySpecialityCombos(): { city_slug: string; speciality_slug: string; speciality_name: string; count: number }[] {
+  const combos: Record<string, { city_slug: string; speciality_slug: string; speciality_name: string; count: number }> = {};
+  for (const b of businesses) {
+    if (b.specialities) {
+      for (const s of b.specialities) {
+        const specSlug = slugifySpeciality(s);
+        const key = `${b.city_slug}/${specSlug}`;
+        if (!combos[key]) {
+          combos[key] = { city_slug: b.city_slug, speciality_slug: specSlug, speciality_name: s, count: 0 };
+        }
+        combos[key].count++;
+      }
+    }
+  }
+  return Object.values(combos);
+}
+
+/** Get businesses for a specific city + speciality */
+export function getBusinessesByCityAndSpeciality(citySlug: string, specialityName: string): Business[] {
+  return businesses.filter(
+    (b) => b.city_slug === citySlug && b.specialities && b.specialities.includes(specialityName)
+  );
+}
+
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export function getSiteStats() {
@@ -135,16 +233,7 @@ export function getSiteStats() {
     totalCategories: Object.keys(categories).length,
     totalCityCategoryCombos: Object.keys(cityCategories).length,
     withPhone: businesses.filter((b) => b.phone).length,
-    withEmail: businesses.filter((b) => b.email).length,
     withWebsite: businesses.filter((b) => b.website).length,
-    verified: businesses.filter((b) => b.verified).length,
-    avgRating:
-      Math.round(
-        (businesses
-          .filter((b) => b.rating)
-          .reduce((sum, b) => sum + (b.rating || 0), 0) /
-          Math.max(1, businesses.filter((b) => b.rating).length)) *
-          10
-      ) / 10,
+    premium: businesses.filter((b) => b.is_premium).length,
   };
 }

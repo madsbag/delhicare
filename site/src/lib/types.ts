@@ -1,86 +1,55 @@
 export interface Business {
+  // Identity
   slug: string;
   name: string;
   category: string;
   category_slug: string;
-  google_category: string;
   city: string;
   city_slug: string;
-  state: string;
-  full_address: string;
+
+  // Contact & Location
+  formatted_address: string;
+  short_address: string;
   phone: string;
-  phone2: string;
-  phone3: string;
-  email: string;
-  email2: string;
+  phone_international: string;
   website: string;
-  rating: number | null;
-  reviews: number;
-  verified: boolean;
-  working_hours: Record<string, string>;
   lat: number | null;
   lng: number | null;
   google_maps_link: string;
-  facebook: string;
-  instagram: string;
-  linkedin: string;
-  twitter: string;
-  whatsapp: string;
-  contact_name: string;
-  contact_title: string;
-  // LLM-extracted content
-  services: Service[];
-  specializations: string[];
-  doctors: Doctor[];
-  facilities: Facility[];
-  testimonials: Testimonial[];
-  faqs: FAQ[];
-  about_description: string;
-  long_description: string;
-  meta_description: string;
-  seo_title: string;
-  founding_year?: string;
-  mission_statement?: string;
-  team_size?: string;
-  bed_count?: string;
-  insurance_accepted?: string[];
-  languages_spoken?: string[];
-  accreditations?: string[];
-  content_source?: string;
-  // Classification data
-  original_sheet_category: string;
-  category_match: string;
-  inferred_category: string;
-  classification_keywords: string;
-  business_summary: string;
-}
 
-export interface Service {
-  name: string;
+  // Ratings
+  rating: number | null;
+  reviews: number;
+
+  // Operations
+  working_hours: string[];
+
+  // LLM-Extracted Content
   description: string;
+  specialities: string[];
+  services: string[];
+  facility_features: string[];
+  facility_type: string;
+  bed_count: number | null;
+  trust_signals: string[];
+  is_premium: boolean;
+
+  // Google Places Data
+  google_place_id?: string;
+  photos?: PlacePhoto[];
 }
 
-export interface Doctor {
+export interface PlacePhoto {
   name: string;
-  title: string;
-  qualifications: string;
-  specialization: string;
+  widthPx: number;
+  heightPx: number;
+  authorAttributions: PhotoAttribution[];
 }
 
-export interface Facility {
-  name: string;
-  description: string;
-}
-
-export interface Testimonial {
-  text: string;
-  author: string;
-  rating?: string;
-}
-
-export interface FAQ {
-  question: string;
-  answer: string;
+export interface PhotoAttribution {
+  displayName: string;
+  uri: string;
+  photoUri: string;
 }
 
 export interface CityData {
@@ -130,9 +99,9 @@ export interface SearchEntry {
   city_slug: string;
   rating: number | null;
   reviews: number;
-  verified: boolean;
   has_website: boolean;
   phone: string;
-  specializations?: string[];
-  service_names?: string[];
+  specialities?: string[];
+  services?: string[];
+  is_premium?: boolean;
 }
