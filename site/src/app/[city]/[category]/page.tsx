@@ -5,7 +5,6 @@ import { Star, Crown } from "lucide-react";
 import { Breadcrumbs, BreadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { FilterableDirectory } from "@/components/FilterBar";
 import {
-  getAllCityCategoryCombos,
   getCityBySlug,
   getCategoryBySlug,
   getAllCitySlugs,
@@ -15,19 +14,14 @@ import {
   getAllFacilityTypes,
   getBusinessesByCityAndCategory,
   toListItem,
+  topBusinesses,
 } from "@/lib/data";
 
-export const dynamicParams = false;
+// Render city+category pages on-demand with ISR (cache for 1 day).
+export const revalidate = 86400;
 
 interface PageProps {
   params: Promise<{ city: string; category: string }>;
-}
-
-export async function generateStaticParams() {
-  return getAllCityCategoryCombos().map((cc) => ({
-    city: cc.city_slug,
-    category: cc.category_slug,
-  }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -195,7 +189,7 @@ export default async function CityCategoryPage({ params }: PageProps) {
         )}
 
         <FilterableDirectory
-          businesses={specificBusinesses.map(toListItem)}
+          businesses={topBusinesses(specificBusinesses, 100).map(toListItem)}
           initialCategory={catData.category_name}
           initialCity={city}
           allCategories={allCategories}

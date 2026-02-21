@@ -12,16 +12,14 @@ import {
   getAllFacilityTypes,
   getAllCategories,
   toListItem,
+  topBusinesses,
 } from "@/lib/data";
 
-export const dynamicParams = false;
+// Render city pages on-demand with ISR (cache for 1 day).
+export const revalidate = 86400;
 
 interface PageProps {
   params: Promise<{ city: string }>;
-}
-
-export async function generateStaticParams() {
-  return getAllCitySlugs().map((slug) => ({ city: slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -179,7 +177,7 @@ export default async function CityPage({ params }: PageProps) {
         )}
 
         <FilterableDirectory
-          businesses={businesses.map(toListItem)}
+          businesses={topBusinesses(businesses, 100).map(toListItem)}
           initialCity={city}
           allCategories={allCategories}
           allCities={allCities}

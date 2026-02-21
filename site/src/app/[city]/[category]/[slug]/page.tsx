@@ -33,19 +33,12 @@ import {
 } from "@/lib/data";
 import type { Business } from "@/lib/types";
 
-export const dynamicParams = false;
+// Render listing pages on-demand with ISR (cache for 1 day).
+// Pre-building all 4,382 listings exceeds Vercel's 75 MB deployment limit.
+export const revalidate = 86400;
 
 interface PageProps {
   params: Promise<{ city: string; category: string; slug: string }>;
-}
-
-export async function generateStaticParams() {
-  const businesses = getAllBusinesses();
-  return businesses.map((b) => ({
-    city: b.city_slug,
-    category: b.category_slug,
-    slug: b.slug,
-  }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

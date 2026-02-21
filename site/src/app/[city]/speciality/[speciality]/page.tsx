@@ -13,17 +13,12 @@ import {
   getAllSpecialities,
 } from "@/lib/data";
 
-export const dynamicParams = false;
+// Render speciality pages on-demand with ISR (cache for 1 day).
+// Pre-building all 269 pages exceeds Vercel's 75 MB deployment limit.
+export const revalidate = 86400;
 
 interface PageProps {
   params: Promise<{ city: string; speciality: string }>;
-}
-
-export async function generateStaticParams() {
-  return getAllCitySpecialityCombos().map((combo) => ({
-    city: combo.city_slug,
-    speciality: combo.speciality_slug,
-  }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

@@ -272,6 +272,20 @@ export function getAllBusinessesSlim(): Business[] {
   return businesses.map(toListItem);
 }
 
+/**
+ * Sort businesses: premium first, then by rating descending.
+ * Optionally cap at `limit` results for deployment size constraints.
+ */
+export function topBusinesses(list: Business[], limit: number = 200): Business[] {
+  return [...list]
+    .sort((a, b) => {
+      if (a.is_premium && !b.is_premium) return -1;
+      if (!a.is_premium && b.is_premium) return 1;
+      return (b.rating || 0) - (a.rating || 0);
+    })
+    .slice(0, limit);
+}
+
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export function getSiteStats() {
