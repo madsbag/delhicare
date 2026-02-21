@@ -8,11 +8,13 @@ import {
   getAllCitySlugs,
   getCityBySlug,
   getBusinessesByCitySlug,
-  getAllBusinesses,
   getAllSpecialities,
   getAllFacilityTypes,
   getAllCategories,
+  toListItem,
 } from "@/lib/data";
+
+export const dynamicParams = false;
 
 interface PageProps {
   params: Promise<{ city: string }>;
@@ -42,7 +44,7 @@ export default async function CityPage({ params }: PageProps) {
   if (!cityData) notFound();
 
   const businesses = getBusinessesByCitySlug(city);
-  const allCategories = [...new Set(getAllBusinesses().map((b) => b.category))];
+  const allCategories = [...new Set(businesses.map((b) => b.category))];
   const allCities = getAllCitySlugs();
   const allSpecialities = getAllSpecialities();
   const allFacilityTypes = getAllFacilityTypes();
@@ -177,7 +179,7 @@ export default async function CityPage({ params }: PageProps) {
         )}
 
         <FilterableDirectory
-          businesses={businesses}
+          businesses={businesses.map(toListItem)}
           initialCity={city}
           allCategories={allCategories}
           allCities={allCities}

@@ -19,3 +19,4 @@ pipeline/data/stage2_rules_delhi.json
 
 # Node
 node_modules/
+.vercel

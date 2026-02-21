@@ -13,6 +13,8 @@ import {
   getAllSpecialities,
 } from "@/lib/data";
 
+export const dynamicParams = false;
+
 interface PageProps {
   params: Promise<{ city: string; speciality: string }>;
 }

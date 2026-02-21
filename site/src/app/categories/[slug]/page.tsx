@@ -7,12 +7,15 @@ import { FilterableDirectory } from "@/components/FilterBar";
 import {
   getAllCategorySlugs,
   getCategoryBySlug,
-  getAllBusinesses,
+  getBusinessesByCategorySlug,
   getAllCitySlugs,
   getAllSpecialities,
   getAllFacilityTypes,
   getAllCities,
+  toListItem,
 } from "@/lib/data";
+
+export const dynamicParams = false;
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -41,9 +44,8 @@ export default async function CategoryPage({ params }: PageProps) {
   const catData = getCategoryBySlug(slug);
   if (!catData) notFound();
 
-  const allBusinesses = getAllBusinesses();
-  const categoryBusinesses = allBusinesses.filter((b) => b.category_slug === slug);
-  const allCategories = [...new Set(allBusinesses.map((b) => b.category))];
+  const categoryBusinesses = getBusinessesByCategorySlug(slug);
+  const allCategories = [...new Set(categoryBusinesses.map((b) => b.category))];
   const allCities = getAllCitySlugs();
   const allSpecialities = getAllSpecialities();
   const allFacilityTypes = getAllFacilityTypes();
@@ -180,7 +182,7 @@ export default async function CategoryPage({ params }: PageProps) {
         )}
 
         <FilterableDirectory
-          businesses={allBusinesses}
+          businesses={categoryBusinesses.map(toListItem)}
           initialCategory={catData.category_name}
           allCategories={allCategories}
           allCities={allCities}

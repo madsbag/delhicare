@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Breadcrumbs, BreadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { FilterableDirectory } from "@/components/FilterBar";
-import { getAllBusinesses, getAllCitySlugs, getAllSpecialities, getAllFacilityTypes } from "@/lib/data";
+import { getAllBusinessesSlim, getAllCitySlugs, getAllSpecialities, getAllFacilityTypes } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Find Supportive Health Care Facilities in India - Complete Directory",
@@ -18,7 +18,7 @@ export default async function DirectoryPage({
   searchParams: Promise<{ speciality?: string; city?: string; category?: string }>;
 }) {
   const params = await searchParams;
-  const businesses = getAllBusinesses();
+  const businesses = getAllBusinessesSlim();
   const allCategories = [...new Set(businesses.map((b) => b.category))];
   const allCities = getAllCitySlugs();
   const allSpecialities = getAllSpecialities();

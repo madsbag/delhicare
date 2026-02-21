@@ -224,6 +224,54 @@ export function getBusinessesByCityAndSpeciality(citySlug: string, specialityNam
   );
 }
 
+// ─── List-view helpers (slim payloads for client components) ─────────────────
+
+/**
+ * Strips heavy fields from a Business, keeping only what ListingCard + FilterBar need.
+ * Reduces per-item JSON size by ~60 % (no description, working_hours, services,
+ * facility_features, trust_signals, extra photos, lat/lng, etc.)
+ */
+export function toListItem(b: Business): Business {
+  return {
+    slug: b.slug,
+    name: b.name,
+    category: b.category,
+    category_slug: b.category_slug,
+    city: b.city,
+    city_slug: b.city_slug,
+    formatted_address: "",
+    short_address: b.short_address || "",
+    phone: b.phone || "",
+    phone_international: "",
+    website: b.website || "",
+    lat: null,
+    lng: null,
+    google_maps_link: "",
+    rating: b.rating,
+    reviews: 0,
+    working_hours: [],
+    description: "",
+    specialities: b.specialities || [],
+    services: [],
+    facility_features: [],
+    facility_type: b.facility_type || "",
+    bed_count: null,
+    trust_signals: [],
+    is_premium: b.is_premium,
+    photos: b.photos?.slice(0, 1).map((p) => ({
+      name: p.name,
+      widthPx: p.widthPx,
+      heightPx: p.heightPx,
+      authorAttributions: [],
+    })),
+  };
+}
+
+/** Slim all businesses for list-view pages */
+export function getAllBusinessesSlim(): Business[] {
+  return businesses.map(toListItem);
+}
+
 // ─── Stats ───────────────────────────────────────────────────────────────────
 
 export function getSiteStats() {

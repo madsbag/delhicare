@@ -33,6 +33,8 @@ import {
 } from "@/lib/data";
 import type { Business } from "@/lib/types";
 
+export const dynamicParams = false;
+
 interface PageProps {
   params: Promise<{ city: string; category: string; slug: string }>;
 }

@@ -6,6 +6,8 @@ import { Breadcrumbs, BreadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { Badge } from "@/components/ui/badge";
 import { getAllPostSlugs, getPostBySlug, getAllPosts } from "@/lib/blog";
 
+export const dynamicParams = false;
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
