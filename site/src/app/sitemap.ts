@@ -10,9 +10,8 @@ import type { Business } from "@/lib/types";
 
 const BASE_URL = "https://karocare.in";
 const LAST_UPDATED = "2026-03-01";
-const FACILITY_CHUNK_SIZE = 1500;
 
-// ── Quality scoring for facility pages ──────────────────────────────────────
+// ── Quality scoring: higher = Google should crawl first ─────────────────────
 
 function qualityScore(b: Business): number {
   let score = 0;
@@ -27,32 +26,17 @@ function qualityScore(b: Business): number {
   return score;
 }
 
-function priorityFromScore(score: number): 0.8 | 0.7 | 0.6 | 0.5 {
+function priorityFromScore(score: number): number {
   if (score >= 60) return 0.8;
   if (score >= 40) return 0.7;
   if (score >= 20) return 0.6;
   return 0.5;
 }
 
-// ── Next.js multi-sitemap: generates /sitemap/0.xml, /sitemap/1.xml, … ─────
-
-export async function generateSitemaps() {
-  const total = getAllBusinesses().length;
-  const facilityChunks = Math.ceil(total / FACILITY_CHUNK_SIZE);
-  // id 0 = hub pages (cities, categories, blog, static)
-  // id 1..N = facility detail pages sorted by quality
-  return Array.from({ length: 1 + facilityChunks }, (_, i) => ({ id: i }));
-}
-
-export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
-  if (id === 0) return hubSitemap();
-  return facilitySitemap(id);
-}
-
-// ── Hub sitemap (id=0): high-value navigation pages ─────────────────────────
-
-function hubSitemap(): MetadataRoute.Sitemap {
+export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
+
+  // ── Hub pages (high priority) ───────────────────────────────────────────
 
   // Homepage
   routes.push({
@@ -116,7 +100,7 @@ function hubSitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Static (only index-worthy ones — /map and /feedback excluded via robots.txt)
+  // Static (only index-worthy — /map and /feedback excluded via robots.txt)
   routes.push({
     url: `${BASE_URL}/about`,
     lastModified: new Date(LAST_UPDATED),
@@ -130,23 +114,20 @@ function hubSitemap(): MetadataRoute.Sitemap {
     priority: 0.3,
   });
 
-  return routes;
-}
+  // ── Facility pages (sorted by quality, best first) ────────────────────
 
-// ── Facility sitemaps (id=1..N): sorted by quality, best pages first ────────
-
-function facilitySitemap(id: number): MetadataRoute.Sitemap {
-  const scored = getAllBusinesses()
+  const businesses = getAllBusinesses()
     .map((b) => ({ biz: b, score: qualityScore(b) }))
     .sort((a, b) => b.score - a.score);
 
-  const start = (id - 1) * FACILITY_CHUNK_SIZE;
-  const slice = scored.slice(start, start + FACILITY_CHUNK_SIZE);
+  for (const { biz, score } of businesses) {
+    routes.push({
+      url: `${BASE_URL}/${biz.city_slug}/${biz.category_slug}/${biz.slug}`,
+      lastModified: new Date(LAST_UPDATED),
+      changeFrequency: "monthly",
+      priority: priorityFromScore(score),
+    });
+  }
 
-  return slice.map(({ biz, score }) => ({
-    url: `${BASE_URL}/${biz.city_slug}/${biz.category_slug}/${biz.slug}`,
-    lastModified: new Date(LAST_UPDATED),
-    changeFrequency: "monthly" as const,
-    priority: priorityFromScore(score),
-  }));
+  return routes;
 }
