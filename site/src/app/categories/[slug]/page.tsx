@@ -27,9 +27,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const catData = getCategoryBySlug(slug);
   if (!catData) return { title: "Not Found" };
 
+  const year = new Date().getFullYear();
+  const cityCount = Object.keys(catData.city_counts).length;
+  // "142 Best Post-Hospital Care Centres in India (2026) - 17 Cities"
+  const title = `${catData.count} Best ${catData.display_name} in India (${year}) - ${cityCount} Cities`;
+
+  const avgStr = catData.avg_rating ? `Average rating: ${catData.avg_rating.toFixed(1)}/5.` : "";
+  const topCities = Object.entries(catData.city_counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([c]) => c);
+  const description = `Compare ${catData.count} ${catData.display_name.toLowerCase()} across ${cityCount} cities including ${topCities.join(", ")}. ${avgStr} Ratings, specialities & contact info. Updated ${year}.`.slice(0, 160);
+
   return {
-    title: catData.seo_title,
-    description: catData.seo_description,
+    title,
+    description,
     alternates: {
       canonical: `/categories/${slug}`,
     },

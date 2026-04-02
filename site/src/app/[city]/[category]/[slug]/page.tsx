@@ -50,10 +50,42 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const business = getBusinessBySlug(slug);
   if (!business) return { title: "Not Found" };
 
-  const title = `${business.name} - ${business.category} in ${business.city}`;
-  const description =
-    business.description?.slice(0, 155) ||
-    `${business.name} is a ${business.category.toLowerCase()} facility in ${business.city}. Find ratings, services, and contact information.`;
+  // Build a rich, click-worthy title (under ~60 chars ideally)
+  const ratingStr = business.rating ? `★${business.rating.toFixed(1)}` : "";
+  const reviewStr = business.reviews > 0 ? `${business.reviews} Reviews` : "";
+  const titleParts = [business.name];
+  if (ratingStr) titleParts.push(ratingStr);
+  titleParts.push(`${business.category} in ${business.city}`);
+  if (reviewStr && titleParts.join(" - ").length + reviewStr.length < 58) {
+    titleParts.push(reviewStr);
+  }
+  const title = titleParts.join(" - ");
+
+  // Build a rich meta description with unique details
+  const descParts: string[] = [];
+  if (ratingStr && reviewStr) {
+    descParts.push(`Rated ${ratingStr} (${reviewStr}) on Google.`);
+  } else if (ratingStr) {
+    descParts.push(`Rated ${ratingStr} on Google.`);
+  }
+  if (business.specialities && business.specialities.length > 0) {
+    descParts.push(`Specialities: ${business.specialities.slice(0, 3).join(", ")}.`);
+  }
+  if (business.bed_count) {
+    descParts.push(`${business.bed_count}-bed facility.`);
+  }
+  if (business.facility_type && business.facility_type !== "Unknown") {
+    descParts.push(`Type: ${business.facility_type}.`);
+  }
+  if (business.phone) {
+    descParts.push(`Call now for details.`);
+  }
+  const shortDesc = business.description?.slice(0, 80)?.replace(/\n/g, " ");
+  if (shortDesc && descParts.join(" ").length < 90) {
+    descParts.push(shortDesc);
+  }
+  const description = descParts.join(" ").slice(0, 160) ||
+    `${business.name} is a ${business.category.toLowerCase()} facility in ${business.city}. View ratings, specialities, and contact information on Karo Care.`;
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://karocare.in";
   const ogImages =

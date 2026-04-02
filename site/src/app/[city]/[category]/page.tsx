@@ -30,11 +30,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const catData = getCategoryBySlug(category);
   if (!cityData || !catData) return { title: "Not Found" };
 
-  const count = getBusinessesByCityAndCategory(city, category).length;
+  const businesses = getBusinessesByCityAndCategory(city, category);
+  const count = businesses.length;
+  const ratedBizs = businesses.filter((b) => b.rating);
+  const avgRating = ratedBizs.length > 0
+    ? (ratedBizs.reduce((sum, b) => sum + (b.rating || 0), 0) / ratedBizs.length).toFixed(1)
+    : null;
+  const premiumCount = businesses.filter((b) => b.is_premium).length;
+
+  // Targeted title: "10 Best Old Age Homes in Delhi (2026) - Verified & Rated"
+  const year = new Date().getFullYear();
+  const title = `${count} Best ${catData.display_name} in ${cityData.display_name} (${year}) - Verified & Rated`;
+
+  // Rich description with unique signals
+  const descParts = [
+    `Compare ${count} ${catData.display_name.toLowerCase()} in ${cityData.display_name}.`,
+  ];
+  if (avgRating) descParts.push(`Average rating: ${avgRating}/5.`);
+  if (premiumCount > 0) descParts.push(`${premiumCount} premium-verified.`);
+  descParts.push(`View ratings, specialities, contact details, and photos. Updated ${year}.`);
+  const description = descParts.join(" ").slice(0, 160);
 
   return {
-    title: `Best ${catData.display_name} in ${cityData.display_name} - Ratings & Services`,
-    description: `Find and compare ${count} top-rated ${catData.display_name.toLowerCase()} in ${cityData.display_name}. Check ratings, specialities, and contact information.`,
+    title,
+    description,
     alternates: {
       canonical: `/${city}/${category}`,
     },

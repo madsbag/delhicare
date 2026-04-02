@@ -27,9 +27,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const cityData = getCityBySlug(city);
   if (!cityData) return { title: "Not Found" };
 
+  const year = new Date().getFullYear();
+  // Dynamic title: "500+ Care Facilities in Mumbai (2026) - Old Age Homes, Nursing & More"
+  const catNames = Object.keys(cityData.category_counts)
+    .sort((a, b) => (cityData.category_counts[b] || 0) - (cityData.category_counts[a] || 0))
+    .slice(0, 2);
+  const catSuffix = catNames.length > 0 ? ` - ${catNames.join(", ")} & More` : "";
+  const title = `${cityData.count}+ Care Facilities in ${cityData.display_name} (${year})${catSuffix}`;
+
+  // Rich description
+  const avgStr = cityData.avg_rating ? `Average rating: ${cityData.avg_rating.toFixed(1)}/5.` : "";
+  const description = `Find and compare ${cityData.count} verified care facilities in ${cityData.display_name}. ${avgStr} Browse old age homes, nursing homes, home health care, and post-hospital care. Updated ${year}.`.slice(0, 160);
+
   return {
-    title: cityData.seo_title,
-    description: cityData.seo_description,
+    title,
+    description,
     alternates: {
       canonical: `/${city}`,
     },

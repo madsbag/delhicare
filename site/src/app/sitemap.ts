@@ -9,7 +9,7 @@ import { getAllPosts } from "@/lib/blog";
 import type { Business } from "@/lib/types";
 
 const BASE_URL = "https://karocare.in";
-const LAST_UPDATED = "2026-03-01";
+const LAST_UPDATED = "2026-04-02";
 
 // ── Quality scoring: higher = Google should crawl first ─────────────────────
 

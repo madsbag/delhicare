@@ -10,6 +10,22 @@ const nextConfig: NextConfig = {
     ],
     remotePatterns: [],
   },
+  async redirects() {
+    return [
+      {
+        // 301 redirect dead /[city]/speciality/[slug] URLs → city page
+        source: "/:city/speciality/:slug",
+        destination: "/:city",
+        permanent: true,
+      },
+      {
+        // Also catch the bare /[city]/speciality/ path
+        source: "/:city/speciality",
+        destination: "/:city",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
