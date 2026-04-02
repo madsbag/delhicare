@@ -258,6 +258,7 @@ export function toListItem(b: Business): Business {
     bed_count: null,
     trust_signals: [],
     is_premium: b.is_premium,
+    google_place_id: b.google_place_id,
     photos: b.photos?.slice(0, 1).map((p) => ({
       name: p.name,
       widthPx: p.widthPx,

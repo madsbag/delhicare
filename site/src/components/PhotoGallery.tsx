@@ -5,44 +5,46 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, Camera, X } from "lucide-react";
 import type { PlacePhoto } from "@/lib/types";
 
-const PLACES_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY || "";
-
-function getPhotoUrl(photoName: string, maxWidthPx: number = 800): string {
-  return `https://places.googleapis.com/v1/${photoName}/media?maxWidthPx=${maxWidthPx}&key=${PLACES_API_KEY}`;
+function getPhotoUrl(placeId: string, index: number, maxWidthPx: number = 800): string {
+  return `/api/photo/${placeId}/${index}?w=${maxWidthPx}`;
 }
 
 interface PhotoGalleryProps {
   photos: PlacePhoto[];
+  placeId: string;
   businessName: string;
   category?: string;
   city?: string;
 }
 
-export function PhotoGallery({ photos, businessName, category, city }: PhotoGalleryProps) {
+export function PhotoGallery({ photos, placeId, businessName, category, city }: PhotoGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [failedPhotos, setFailedPhotos] = useState<Set<number>>(new Set());
 
-  if (!PLACES_API_KEY || !photos || photos.length === 0) return null;
+  if (!placeId || !photos || photos.length === 0) return null;
 
-  // Filter out failed photos
-  const validPhotos = photos.filter((_, i) => !failedPhotos.has(i));
-  if (validPhotos.length === 0) return null;
+  // Filter out failed photos, tracking original indices
+  const validEntries = photos
+    .map((photo, i) => ({ photo, originalIndex: i }))
+    .filter(({ originalIndex }) => !failedPhotos.has(originalIndex));
+
+  if (validEntries.length === 0) return null;
+
+  const safeIndex = Math.min(currentIndex, validEntries.length - 1);
+  const { photo: currentPhoto, originalIndex: currentOriginalIndex } = validEntries[safeIndex];
+  const attribution = currentPhoto?.authorAttributions?.[0];
 
   const handleError = (originalIndex: number) => {
     setFailedPhotos((prev) => new Set(prev).add(originalIndex));
-    // Reset current index if needed
-    if (currentIndex >= validPhotos.length - 1) {
+    if (safeIndex >= validEntries.length - 1) {
       setCurrentIndex(0);
     }
   };
 
-  const currentPhoto = validPhotos[currentIndex];
-  const attribution = currentPhoto?.authorAttributions?.[0];
-
-  const goNext = () => setCurrentIndex((i) => (i + 1) % validPhotos.length);
+  const goNext = () => setCurrentIndex((i) => (i + 1) % validEntries.length);
   const goPrev = () =>
-    setCurrentIndex((i) => (i - 1 + validPhotos.length) % validPhotos.length);
+    setCurrentIndex((i) => (i - 1 + validEntries.length) % validEntries.length);
 
   return (
     <>
@@ -54,22 +56,19 @@ export function PhotoGallery({ photos, businessName, category, city }: PhotoGall
           onClick={() => setLightboxOpen(true)}
         >
           <Image
-            src={getPhotoUrl(currentPhoto.name, 800)}
-            alt={`${businessName}${category ? ` - ${category}` : ""} facility${city ? ` in ${city}` : ""} - Photo ${currentIndex + 1}`}
+            src={getPhotoUrl(placeId, currentOriginalIndex, 800)}
+            alt={`${businessName}${category ? ` - ${category}` : ""} facility${city ? ` in ${city}` : ""} - Photo ${safeIndex + 1}`}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
-            onError={() => {
-              const originalIndex = photos.indexOf(currentPhoto);
-              handleError(originalIndex);
-            }}
-            priority={currentIndex === 0}
+            onError={() => handleError(currentOriginalIndex)}
+            priority={safeIndex === 0}
           />
 
           {/* Photo count badge */}
           <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-black/60 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">
             <Camera className="h-3.5 w-3.5" />
-            {currentIndex + 1} / {validPhotos.length}
+            {safeIndex + 1} / {validEntries.length}
           </div>
 
           {/* Attribution */}
@@ -94,7 +93,7 @@ export function PhotoGallery({ photos, businessName, category, city }: PhotoGall
         </div>
 
         {/* Navigation Arrows */}
-        {validPhotos.length > 1 && (
+        {validEntries.length > 1 && (
           <>
             <button
               onClick={(e) => {
@@ -120,20 +119,20 @@ export function PhotoGallery({ photos, businessName, category, city }: PhotoGall
         )}
 
         {/* Thumbnail strip */}
-        {validPhotos.length > 1 && (
+        {validEntries.length > 1 && (
           <div className="flex gap-1 p-2 bg-white">
-            {validPhotos.map((photo, idx) => (
+            {validEntries.map(({ originalIndex }, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`relative h-14 flex-1 rounded overflow-hidden transition-all ${
-                  idx === currentIndex
+                  idx === safeIndex
                     ? "ring-2 ring-blue-500 opacity-100"
                     : "opacity-60 hover:opacity-90"
                 }`}
               >
                 <Image
-                  src={getPhotoUrl(photo.name, 200)}
+                  src={getPhotoUrl(placeId, originalIndex, 200)}
                   alt={`${businessName} thumbnail ${idx + 1}`}
                   fill
                   className="object-cover"
@@ -164,8 +163,8 @@ export function PhotoGallery({ photos, businessName, category, city }: PhotoGall
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={getPhotoUrl(currentPhoto.name, 1600)}
-              alt={`${businessName}${category ? ` - ${category}` : ""} facility${city ? ` in ${city}` : ""} - Photo ${currentIndex + 1}`}
+              src={getPhotoUrl(placeId, currentOriginalIndex, 1600)}
+              alt={`${businessName}${category ? ` - ${category}` : ""} facility${city ? ` in ${city}` : ""} - Photo ${safeIndex + 1}`}
               width={currentPhoto.widthPx || 1600}
               height={currentPhoto.heightPx || 900}
               className="w-full h-auto max-h-[85vh] object-contain rounded"
@@ -192,7 +191,7 @@ export function PhotoGallery({ photos, businessName, category, city }: PhotoGall
             )}
 
             {/* Navigation in lightbox */}
-            {validPhotos.length > 1 && (
+            {validEntries.length > 1 && (
               <>
                 <button
                   onClick={goPrev}
@@ -219,24 +218,26 @@ export function PhotoGallery({ photos, businessName, category, city }: PhotoGall
 
 /** Small thumbnail for ListingCard */
 export function PhotoThumbnail({
-  photo,
+  placeId,
+  photoIndex,
   businessName,
   category,
   city,
 }: {
-  photo: PlacePhoto;
+  placeId: string;
+  photoIndex: number;
   businessName: string;
   category?: string;
   city?: string;
 }) {
   const [failed, setFailed] = useState(false);
 
-  if (!PLACES_API_KEY || !photo || failed) return null;
+  if (!placeId || failed) return null;
 
   return (
     <div className="relative w-full h-32 rounded-t-lg overflow-hidden bg-gray-100">
       <Image
-        src={getPhotoUrl(photo.name, 400)}
+        src={getPhotoUrl(placeId, photoIndex, 400)}
         alt={`${businessName}${category ? ` - ${category}` : ""}${city ? ` in ${city}` : ""}`}
         fill
         className="object-cover"

@@ -27,8 +27,8 @@ export function ListingCard({ business }: ListingCardProps) {
     <Card className="group hover:shadow-lg transition-shadow duration-200 overflow-hidden border-[#F0E0D6]">
       {/* Photo Thumbnail or Placeholder */}
       <Link href={listingUrl} className="block">
-        {business.photos && business.photos.length > 0 ? (
-          <PhotoThumbnail photo={business.photos[0]} businessName={business.name} category={business.category} city={business.city} />
+        {business.photos && business.photos.length > 0 && business.google_place_id ? (
+          <PhotoThumbnail placeId={business.google_place_id} photoIndex={0} businessName={business.name} category={business.category} city={business.city} />
         ) : (
           <div className="w-full h-32 rounded-t-lg bg-gradient-to-br from-[#FFF5EE] to-[#F0E0D6] flex items-center justify-center">
             <Camera className="h-8 w-8 text-[#E8D5CB]" />

@@ -29,16 +29,20 @@ import {
   getCityBySlug,
   getAllCities,
   getAllCategories,
-  slugifySpeciality,
 } from "@/lib/data";
 import type { Business } from "@/lib/types";
 
-// Render listing pages on-demand with ISR (cache for 1 day).
-// Pre-building all 4,382 listings exceeds Vercel's 75 MB deployment limit.
-export const revalidate = 86400;
-
 interface PageProps {
   params: Promise<{ city: string; category: string; slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const businesses = getAllBusinesses();
+  return businesses.map((b) => ({
+    city: b.city_slug,
+    category: b.category_slug,
+    slug: b.slug,
+  }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -51,11 +55,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     business.description?.slice(0, 155) ||
     `${business.name} is a ${business.category.toLowerCase()} facility in ${business.city}. Find ratings, services, and contact information.`;
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://karocare.in";
   const ogImages =
-    business.photos && business.photos.length > 0 && process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY
+    business.photos && business.photos.length > 0 && business.google_place_id
       ? [
           {
-            url: `https://places.googleapis.com/v1/${business.photos[0].name}/media?maxWidthPx=1200&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`,
+            url: `${baseUrl}/api/photo/${business.google_place_id}/0?w=1200`,
             width: business.photos[0].widthPx,
             height: business.photos[0].heightPx,
             alt: business.name,
@@ -79,30 +84,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 function ListingJsonLd({ business }: { business: Business }) {
-  // Parse working hours into schema.org openingHours format
-  const dayMap: Record<string, string> = {
-    Monday: "Mo", Tuesday: "Tu", Wednesday: "We", Thursday: "Th",
-    Friday: "Fr", Saturday: "Sa", Sunday: "Su",
-  };
-
-  const openingHours: string[] = [];
-  if (business.working_hours) {
-    for (const entry of business.working_hours) {
-      const parts = entry.split(": ");
-      if (parts.length >= 2) {
-        const dayAbbr = dayMap[parts[0]];
-        const timeStr = parts.slice(1).join(": ");
-        if (dayAbbr && timeStr && !timeStr.toLowerCase().includes("closed")) {
-          // Try to extract time range like "9:00 AM – 6:00 PM"
-          const timeMatch = timeStr.match(/(\d{1,2}:\d{2}\s*[AP]M)\s*[–-]\s*(\d{1,2}:\d{2}\s*[AP]M)/i);
-          if (timeMatch) {
-            openingHours.push(`${dayAbbr} ${timeMatch[1]}-${timeMatch[2]}`);
-          }
-        }
-      }
-    }
-  }
-
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
@@ -132,71 +113,6 @@ function ListingJsonLd({ business }: { business: Business }) {
         ...(business.reviews && { reviewCount: business.reviews }),
       },
     }),
-    ...(openingHours.length > 0 && { openingHours }),
-    ...(business.specialities &&
-      business.specialities.length > 0 && {
-        medicalSpecialty: business.specialities,
-      }),
-    ...(business.google_maps_link && { hasMap: business.google_maps_link }),
-    ...(business.bed_count && { numberOfBeds: business.bed_count }),
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
-
-function FAQJsonLd({ business }: { business: Business }) {
-  const faqs: { question: string; answer: string }[] = [];
-
-  // Working hours FAQ
-  if (business.working_hours && business.working_hours.length > 0) {
-    faqs.push({
-      question: `What are the working hours of ${business.name}?`,
-      answer: business.working_hours.join(". "),
-    });
-  }
-
-  // Specialities FAQ
-  if (business.specialities && business.specialities.length > 0) {
-    faqs.push({
-      question: `What specialities does ${business.name} offer?`,
-      answer: `${business.name} offers the following specialities: ${business.specialities.join(", ")}.`,
-    });
-  }
-
-  // Location FAQ
-  if (business.formatted_address) {
-    faqs.push({
-      question: `Where is ${business.name} located?`,
-      answer: `${business.name} is located at ${business.formatted_address}.${business.google_maps_link ? " You can view the location on Google Maps." : ""}`,
-    });
-  }
-
-  // Contact FAQ
-  if (business.phone) {
-    faqs.push({
-      question: `How can I contact ${business.name}?`,
-      answer: `You can reach ${business.name} by phone at ${business.phone}.${business.website ? ` You can also visit their website for more information.` : ""}`,
-    });
-  }
-
-  if (faqs.length === 0) return null;
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
   };
 
   return (
@@ -235,7 +151,6 @@ export default async function ListingPage({ params }: PageProps) {
   return (
     <>
       <ListingJsonLd business={business} />
-      <FAQJsonLd business={business} />
       <BreadcrumbJsonLd items={breadcrumbs} />
 
       <div className="container mx-auto px-4 py-6">
@@ -259,9 +174,9 @@ export default async function ListingPage({ params }: PageProps) {
                   </Badge>
                 )}
                 {business.is_premium && (
-                  <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-indigo-600 text-white text-sm font-semibold shadow-sm">
+                  <span className="flex items-center gap-1 text-sm text-amber-500 font-medium">
                     <Crown className="h-4 w-4" />
-                    Premium Facility
+                    Premium
                   </span>
                 )}
                 <span className="flex items-center gap-1 text-sm text-gray-500">
@@ -314,9 +229,9 @@ export default async function ListingPage({ params }: PageProps) {
           </div>
 
           {/* Photo Gallery */}
-          {business.photos && business.photos.length > 0 && (
+          {business.photos && business.photos.length > 0 && business.google_place_id && (
             <div className="mt-6">
-              <PhotoGallery photos={business.photos} businessName={business.name} category={business.category} city={business.city} />
+              <PhotoGallery photos={business.photos} placeId={business.google_place_id!} businessName={business.name} category={business.category} city={business.city} />
             </div>
           )}
         </div>
@@ -357,18 +272,14 @@ export default async function ListingPage({ params }: PageProps) {
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {business.specialities.map((s, i) => (
-                      <Link
+                      <Badge
                         key={i}
-                        href={`/${city}/speciality/${slugifySpeciality(s)}`}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-[#FFF0F0] text-[#C4705C] hover:bg-[#FFE8E8] hover:text-[#B85A46] border border-transparent hover:border-[#E8927C] transition-all"
+                        className="bg-[#FFF0F0] text-[#C4705C] hover:bg-[#FFF0F0] border-0"
                       >
                         {s}
-                      </Link>
+                      </Badge>
                     ))}
                   </div>
-                  <p className="text-xs text-gray-400 mt-3">
-                    Click a speciality to find more {business.category.toLowerCase()} facilities offering it in {business.city}.
-                  </p>
                 </CardContent>
               </Card>
             )}
@@ -439,9 +350,9 @@ export default async function ListingPage({ params }: PageProps) {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
+          <div className="space-y-6">
             {/* Contact Card */}
-            <Card className="border-[#F0E0D6]">
+            <Card className="sticky top-24 border-[#F0E0D6]">
               <CardHeader>
                 <CardTitle className="text-lg">Contact Information</CardTitle>
               </CardHeader>
