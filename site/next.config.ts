@@ -26,6 +26,21 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          // Proxy /socialos and all sub-paths to the other Vercel project
+          source: "/socialos",
+          destination: "https://socialos-pink.vercel.app",
+        },
+        {
+          source: "/socialos/:path*",
+          destination: "https://socialos-pink.vercel.app/:path*",
+        },
+      ],
+    };
+  },
   async headers() {
     return [
       {
