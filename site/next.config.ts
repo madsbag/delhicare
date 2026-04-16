@@ -30,13 +30,13 @@ const nextConfig: NextConfig = {
     return {
       beforeFiles: [
         {
-          // Proxy /socialos and all sub-paths to the other Vercel project
+          // Proxy /socialos root (with or without trailing slash)
           source: "/socialos",
-          destination: "https://socialos-pink.vercel.app",
+          destination: "https://socialos-pink.vercel.app/socialos",
         },
         {
           source: "/socialos/:path*",
-          destination: "https://socialos-pink.vercel.app/:path*",
+          destination: "https://socialos-pink.vercel.app/socialos/:path*",
         },
       ],
     };
